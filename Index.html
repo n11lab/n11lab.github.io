@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitesh Kumar | Enterprise Digital Accessibility (a11y) & WAI-ARIA Design System</title>
+  
+  <!-- Functional, High-Contrast Accessible Minimal CSS -->
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --primary-color: #003366;
+      --focus-color: #ffbf47;
+      --border-color: #4a4a4a;
+      --card-bg: #f4f6f8;
+      --error-color: #d32f2f;
+      --success-color: #1b5e20;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* WCAG 2.4.1: Bypass Blocks (Skip to content) */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary-color);
+      color: #ffffff;
+      padding: 8px 16px;
+      z-index: 1000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid var(--focus-color);
+    }
+
+    /* Focus Visible Indicator - WCAG 2.4.7 */
+    a:focus, button:focus, input:focus, select:focus, textarea:focus, [tabindex="0"]:focus {
+      outline: 3px solid var(--focus-color);
+      outline-offset: 2px;
+    }
+
+    /* Screen Reader Only Utility Class */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Layout Landmarks */
+    header, nav, main, footer, section, aside {
+      padding: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: #ffffff;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    nav a[aria-current="page"] {
+      text-decoration: none;
+      border-bottom: 3px solid var(--focus-color);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Accessible Semantic Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+    }
+
+    .error-text {
+      color: var(--error-color);
+      font-weight: bold;
+      font-size: 0.9rem;
+      display: none;
+    }
+    input[aria-invalid="true"] {
+      border: 2px solid var(--error-color);
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Modal Dialog */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay[data-visible="true"] {
+      display: flex;
+    }
+    .modal-content {
+      background: var(--bg-color);
+      padding: 2rem;
+      border-radius: 6px;
+      max-width: 500px;
+      width: 90%;
+      border: 2px solid var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Navigation (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Landmark with Metadata -->
+  <header role="banner">
+    <h1>Nitesh Kumar</h1>
+    <p>Certified Digital Accessibility Specialist | Assistive Technology & WCAG Conformance Auditor</p>
+  </header>
+
+  <!-- Navigation Landmark (Bars & Menus) -->
+  <nav role="navigation" aria-label="Main Navigation">
+    <ul>
+      <li><a href="#about" aria-current="page">Professional Profile</a></li>
+      <li><a href="#credentials">Verified Credentials</a></li>
+      <li><a href="#aria-system">WAI-ARIA & HTML Taxonomy</a></li>
+      <li><a href="#interactive-demo">Live Accessible Widgets</a></li>
+      <li><a href="#contact">Audit Inquiry & Form</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Landmark -->
+  <main id="main-content" role="main">
+
+    <!-- Section 1: Professional Profile -->
+    <section id="about" class="card" aria-labelledby="heading-about">
+      <h2 id="heading-about">Executive Profile & Technical Mission</h2>
+      <p>
+        I am a Digital Accessibility Specialist focused on closing the divide between standard digital infrastructure and screen-reader usability. 
+        Leveraging lived screen-reading experience alongside formal international compliance frameworks (W3C WCAG 2.1/2.2, Section 508, GIGW), 
+        I audit, remediate, and architect web solutions that guarantee functional independence for all users.
+      </p>
+    </section>
+
+    <!-- Section 2: Verified Academic & Training Matrix -->
+    <section id="credentials" class="card" aria-labelledby="heading-credentials">
+      <h2 id="heading-credentials">Verified Credentials & Foundational Evidence</h2>
+      <p>This design system implements the practical competencies acquired through the following accreditations:</p>
+      
+      <table>
+        <caption>Consolidated Matrix of Foundational and International Accreditations</caption>
+        <thead>
+          <tr>
+            <th scope="col">Accreditation Title</th>
+            <th scope="col">Issuing Authority</th>
+            <th scope="col">Curriculum Focus</th>
+            <th scope="col">Practical Verification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Career Edge IT (94% Distinction)</th>
+            <td>NIIT Foundation</td>
+            <td>Advanced Office productivity, information architectures, and technical documentation.</td>
+            <td>Synthesized accessible data structures and operational efficiency.</td>
+          </tr>
+          <tr>
+            <th scope="row">DADCA (Diploma in Assistive Devices in Computer Application)</th>
+            <td>National Association for the Blind (NAB) Delhi</td>
+            <td>NVDA screen reader telemetry, advanced keyboard navigation, and software accommodations.</td>
+            <td>End-to-end non-visual QA auditing and manual accessibility inspection.</td>
+          </tr>
+          <tr>
+            <th scope="row">IAAP CPACC Prep 3.0 (5.0 IAAP ECs)</th>
+            <td>Deque University</td>
+            <td>Disabilities, universal design, and international accessibility mandates (ADA, Equality Act, Section 508).</td>
+            <td>Compliance governance, disability models, and enterprise accessibility architecture.</td>
+          </tr>
+          <tr>
+            <th scope="row">Accessibility Fundamentals (1.5 IAAP ECs)</th>
+            <td>Deque University</td>
+            <td>Core WCAG principles (Perceivable, Operable, Understandable, Robust).</td>
+            <td>Technical categorization of accessibility barriers across digital workflows.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section 3: The Complete Semantic HTML & WAI-ARIA Living Taxonomy -->
+    <section id="aria-system" class="card" aria-labelledby="heading-taxonomy">
+      <h2 id="heading-taxonomy">WAI-ARIA 1.2 & Semantic HTML Structure Engine</h2>
+      <p>
+        The following technical framework demonstrates proper implementation of semantic tags, landmark roles, and WAI-ARIA states/properties:
+      </p>
+
+      <h3>1. Structural Landmarks & Roles</h3>
+      <ul>
+        <li><code>role="banner"</code> (Semantic Equivalent: <code>&lt;header&gt;</code>): Top-level site branding.</li>
+        <li><code>role="navigation"</code> (Semantic Equivalent: <code>&lt;nav&gt;</code>): Designated interactive links menu.</li>
+        <li><code>role="main"</code> (Semantic Equivalent: <code>&lt;main&gt;</code>): Unique primary content container.</li>
+        <li><code>role="contentinfo"</code> (Semantic Equivalent: <code>&lt;footer&gt;</code>): Metadata, copyright, and auxiliary links.</li>
+        <li><code>role="complementary"</code> (Semantic Equivalent: <code>&lt;aside&gt;</code>): Supporting contextual data.</li>
+        <li><code>role="region"</code> (Semantic Equivalent: <code>&lt;section&gt;</code>): Requires <code>aria-labelledby</code> to serve as an accessible landmark.</li>
+      </ul>
+
+      <h3>2. Essential ARIA Attributes Reference</h3>
+      <dl>
+        <dt><strong><code>aria-label</code></strong></dt>
+        <dd>Provides an invisible accessible string label when visual text is absent (e.g., icon buttons).</dd>
+        
+        <dt><strong><code>aria-labelledby</code></strong></dt>
+        <dd>Associates an element with another visible on-screen element via element ID for programmatic naming.</dd>
+        
+        <dt><strong><code>aria-describedby</code></strong></dt>
+        <dd>Points to helper instructions or extended error text that screen readers speak after the primary label.</dd>
+        
+        <dt><strong><code>aria-hidden="true"</code></strong></dt>
+        <dd>Hides purely decorative graphics or redundant SVG icons from the accessibility tree.</dd>
+        
+        <dt><strong><code>aria-live</code> (polite / assertive)</strong></dt>
+        <dd>Instructs screen readers to announce dynamic updates without page reload (polite waits for pause; assertive announces immediately).</dd>
+        
+        <dt><strong><code>aria-expanded</code> (true / false)</strong></dt>
+        <dd>Indicates whether a collapsible disclosure widget or dropdown menu is open or closed.</dd>
+      </dl>
+    </section>
+
+    <!-- Section 4: Live Accessible Interactive Widgets (With Basic JavaScript) -->
+    <section id="interactive-demo" class="card" aria-labelledby="heading-widgets">
+      <h2 id="heading-widgets">Live Interactive Accessible Components</h2>
+      <p>Below are fully functional components validating core JavaScript accessibility state management:</p>
+
+      <!-- Accessible Accordion / Disclosure Widget -->
+      <h3>Accessible Accordion / Disclosure Component</h3>
+      <div>
+        <button type="button" id="accordion-toggle" aria-expanded="false" aria-controls="accordion-panel">
+          Show WCAG 2.2 Success Metrics
+        </button>
+        <div id="accordion-panel" role="region" aria-labelledby="accordion-toggle" hidden style="margin-top: 10px; padding: 10px; border-left: 4px solid var(--primary-color);">
+          <p>
+            WCAG 2.2 introduces 9 new success criteria focused on low vision, motor impairments, and cognitive load. 
+            All state transitions are synchronized with <code>aria-expanded</code> and the <code>hidden</code> attribute.
+          </p>
+        </div>
+      </div>
+
+      <hr style="margin: 2rem 0;">
+
+      <!-- Accessible Modal Dialog -->
+      <h3>Accessible Modal Dialog Component</h3>
+      <button type="button" id="open-modal-btn">Open Accessible Dialog</button>
+
+      <div class="modal-overlay" id="modal-container" role="presentation" data-visible="false">
+        <div role="dialog" id="accessible-dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-desc" class="modal-content">
+          <h4 id="dialog-title">Audit Remediation Confirmation</h4>
+          <p id="dialog-desc">Are you sure you want to approve this accessibility conformance statement?</p>
+          <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
+            <button type="button" id="confirm-btn">Confirm Audit</button>
+            <button type="button" id="close-modal-btn">Close Modal</button>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin: 2rem 0;">
+
+      <!-- Live Notification Region -->
+      <h3>Live Region Status Announcer (aria-live)</h3>
+      <button type="button" id="trigger-status-btn">Trigger Screen Reader Live Notification</button>
+      <div id="live-announcer" class="sr-only" role="status" aria-live="polite"></div>
+      <p id="visual-status" aria-hidden="true" style="font-weight: bold; margin-top: 10px;"></p>
+    </section>
+
+    <!-- Section 5: Accessible Contact & Form Validation -->
+    <section id="contact" class="card" aria-labelledby="heading-form">
+      <h2 id="heading-form">Accessible Compliance Inquiry Form</h2>
+      <form id="audit-form" novalidate>
+        
+        <div class="form-group">
+          <label for="client-name">Full Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="client-name" name="client-name" required aria-required="true" aria-describedby="name-error">
+          <div id="name-error" class="error-text" role="alert">Error: Full Name is required to proceed.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="client-email">Email Address <span aria-hidden="true">*</span></label>
+          <input type="email" id="client-email" name="client-email" required aria-required="true" aria-describedby="email-error">
+          <div id="email-error" class="error-text" role="alert">Error: Please enter a valid email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="service-type">Select Audit Scope</label>
+          <select id="service-type" name="service-type">
+            <option value="web-audit">Web Accessibility Audit (WCAG 2.1 AA)</option>
+            <option value="doc-remediation">Document Remediation (PDF/Word)</option>
+            <option value="training">Corporate D&I Training & SOP Design</option>
+          </select>
+        </div>
+
+        <button type="submit" id="submit-form-btn">Submit Inquiry</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer Landmark -->
+  <footer role="contentinfo">
+    <p>&copy; 2026 Nitesh Kumar. All rights reserved.</p>
+    <p>Engineered in compliance with W3C WAI-ARIA 1.2 standards and Section 508 accessibility guidelines.</p>
+  </footer>
+
+  <!-- Basic JavaScript: Accessible State Management & Logic -->
+  <script>
+    // 1. Accordion / Disclosure Logic
+    const accordionBtn = document.getElementById('accordion-toggle');
+    const accordionPanel = document.getElementById('accordion-panel');
+
+    accordionBtn.addEventListener('click', function() {
+      const isExpanded = accordionBtn.getAttribute('aria-expanded') === 'true';
+      accordionBtn.setAttribute('aria-expanded', !isExpanded);
+      accordionPanel.hidden = isExpanded;
+    });
+
+    // 2. Modal Dialog Focus Management Logic
+    const openModalBtn = document.getElementById('open-modal-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const confirmBtn = document.getElementById('confirm-btn');
+    const modalContainer = document.getElementById('modal-container');
+    const accessibleDialog = document.getElementById('accessible-dialog');
+
+    openModalBtn.addEventListener('click', function() {
+      modalContainer.setAttribute('data-visible', 'true');
+      closeModalBtn.focus(); // Move focus inside modal
+    });
+
+    function dismissModal() {
+      modalContainer.setAttribute('data-visible', 'false');
+      openModalBtn.focus(); // Return focus to triggering button (WCAG 2.4.3)
+    }
+
+    closeModalBtn.addEventListener('click', dismissModal);
+    confirmBtn.addEventListener('click', dismissModal);
+
+    // Escape Key Dismissal (WCAG 2.1.2)
+    window.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modalContainer.getAttribute('data-visible') === 'true') {
+        dismissModal();
+      }
+    });
+
+    // 3. Live Region Announcement Logic
+    const triggerStatusBtn = document.getElementById('trigger-status-btn');
+    const liveAnnouncer = document.getElementById('live-announcer');
+    const visualStatus = document.getElementById('visual-status');
+
+    triggerStatusBtn.addEventListener('click', function() {
+      const timestamp = new Date().toLocaleTimeString();
+      const message = "Automated audit scan completed at " + timestamp + ". Zero critical failures detected.";
+      
+      liveAnnouncer.textContent = message;
+      visualStatus.textContent = message;
+    });
+
+    // 4. Accessible Form Validation Logic
+    const auditForm = document.getElementById('audit-form');
+    const clientNameInput = document.getElementById('client-name');
+    const nameError = document.getElementById('name-error');
+
+    auditForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      if (clientNameInput.value.trim() === '') {
+        clientNameInput.setAttribute('aria-invalid', 'true');
+        nameError.style.display = 'block';
+        clientNameInput.focus(); // Focus the invalid input
+      } else {
+        clientNameInput.removeAttribute('aria-invalid');
+        nameError.style.display = 'none';
+        alert('Form successfully submitted with verified accessible parameters.');
+      }
+    });
+  </script>
+</body>
+</html>
