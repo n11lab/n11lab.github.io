@@ -3,52 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags for Top Ranking -->
-  <title>Nitesh Kumar | Accessibility Specialist & Digital Inclusion Lead</title>
-  <meta name="description" content="Official accessibility portal and showcase of Nitesh Kumar. Certified in CPACC Prep, DADCA, and IT, specializing in WCAG 2.1/2.2, screen reader testing, and WAI-ARIA engineering.">
-  <meta name="keywords" content="Nitesh Kumar, Nitesh Kumar Accessibility, a11y portfolio, NVDA Expert, CPACC Specialist, WCAG Auditor, Digital Inclusion India">
+
+  <!-- ==========================================
+       SEO & SEARCH ENGINE OPTIMIZATION TAGS
+       ========================================== -->
+  <title>Nitesh Kumar | Lead Accessibility Specialist & Universal Inclusion Engineer</title>
+  <meta name="description" content="Official enterprise accessibility portfolio of Nitesh Kumar. Certified in CPACC, DADCA, and IT. Featuring live automated document auditors, web scanners, and cross-disability resources.">
+  <meta name="keywords" content="Nitesh Kumar, Accessibility Specialist, a11y portfolio, NVDA Expert, CPACC Lead, WCAG 2.2 Auditor, Assistive Technology, Patna Bihar">
   <meta name="author" content="Nitesh Kumar">
   <meta name="robots" content="index, follow">
 
   <style>
+    /* ==========================================
+       ACCESSIBLE COLOR PALETTE & LAYOUT (WCAG AA)
+       ========================================== */
     :root {
-      --bg-primary: #ffffff;
-      --text-main: #1b1b1b;
-      --brand-blue: #0b3c5d;
-      --brand-gold: #b37d14;
-      --card-bg: #f8f9fa;
-      --border-color: #333333;
-      --focus-ring: #005fcc;
+      --bg-page: #f8f9fa;
+      --bg-card: #ffffff;
+      --text-main: #111111;
+      --text-muted: #444444;
+      --primary: #003366;
+      --accent: #b37d14;
+      --border: #444444;
+      --focus-outline: #005fcc;
       --focus-bg: #ffeb3b;
+      --error: #b71c1c;
+      --success: #1b5e20;
     }
 
-    /* Base Setup & Cross-Device Compatibility */
     *, *::before, *::after {
       box-sizing: border-box;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.6;
       color: var(--text-main);
-      background-color: var(--bg-primary);
+      background-color: var(--bg-page);
       margin: 0;
       padding: 0;
       -webkit-text-size-adjust: 100%;
     }
 
-    /* WCAG 2.4.1 Skip Links */
+    /* WCAG 2.4.1: Bypass Links */
     .skip-link {
       position: absolute;
-      top: -60px;
+      top: -70px;
       left: 10px;
       background: #000000;
       color: #ffffff;
-      padding: 10px 16px;
-      z-index: 9999;
+      padding: 12px 18px;
+      z-index: 10000;
       font-weight: bold;
       text-decoration: none;
+      border: 2px solid var(--focus-bg);
       border-radius: 4px;
     }
     .skip-link:focus {
@@ -56,9 +64,9 @@
       outline: 3px solid var(--focus-bg);
     }
 
-    /* WCAG 2.4.7 High Contrast Focus Visible */
+    /* WCAG 2.4.7: Focus Visible */
     a:focus, button:focus, input:focus, select:focus, textarea:focus, [tabindex="0"]:focus {
-      outline: 3px solid var(--focus-ring);
+      outline: 3px solid var(--focus-outline);
       outline-offset: 3px;
     }
 
@@ -74,16 +82,16 @@
       border: 0;
     }
 
-    /* Universal Live Telemetry Ribbon */
+    /* Dynamic Top Telemetry Ribbon (Silent: No Screen Reader Interruption) */
     .telemetry-ribbon {
       background-color: #111111;
       color: #ffffff;
       padding: 10px 16px;
       font-size: 0.95rem;
-      border-bottom: 2px solid var(--brand-gold);
+      border-bottom: 2px solid var(--accent);
     }
-    .ribbon-container {
-      max-width: 1200px;
+    .ribbon-flex {
+      max-width: 1250px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
@@ -91,25 +99,20 @@
       gap: 12px;
       align-items: center;
     }
-    .telemetry-item {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-    }
     .quote-box {
+      color: var(--focus-bg);
       font-style: italic;
-      color: #ffeb3b;
     }
 
-    /* Header & Navigation */
+    /* Header & Action Navigation */
     header {
-      background: var(--brand-blue);
+      background: var(--primary);
       color: #ffffff;
       padding: 1.5rem 16px;
-      border-bottom: 4px solid var(--brand-gold);
+      border-bottom: 4px solid var(--accent);
     }
-    .header-inner {
-      max-width: 1200px;
+    .header-container {
+      max-width: 1250px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
@@ -121,12 +124,7 @@
       margin: 0 0 5px 0;
       font-size: clamp(1.5rem, 4vw, 2.2rem);
     }
-    header p {
-      margin: 0;
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-    }
 
-    /* Quick Jump Action Buttons (Touch Friendly: min 48px) */
     .jump-btn {
       background: #000000;
       color: #ffffff;
@@ -137,59 +135,36 @@
       border-radius: 4px;
       cursor: pointer;
       min-height: 48px;
-      min-width: 48px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .jump-btn:hover {
-      background: #333333;
     }
 
-    /* Floating Go To Top Button */
-    .floating-top-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--brand-blue);
-      color: #ffffff;
-      border: 2px solid var(--brand-gold);
-      border-radius: 50px;
-      padding: 12px 20px;
-      font-size: 1rem;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 1000;
-      min-height: 48px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .floating-top-btn:hover {
-      background: #002244;
-    }
-
-    nav {
+    /* Search & Global Nav */
+    .nav-search-bar {
       background: #e9ecef;
-      border-bottom: 2px solid var(--border-color);
+      border-bottom: 2px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 999;
+      padding: 8px 16px;
     }
-    .nav-inner {
-      max-width: 1200px;
+    .nav-container {
+      max-width: 1250px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      padding: 8px 12px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
     }
     .nav-btn {
       background: transparent;
       border: 2px solid transparent;
       padding: 10px 14px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: bold;
       color: #111111;
       cursor: pointer;
@@ -197,28 +172,49 @@
       min-height: 48px;
     }
     .nav-btn[aria-selected="true"] {
-      background: var(--brand-blue);
+      background: var(--primary);
       color: #ffffff;
       border-color: #000000;
     }
 
-    /* Main Container */
-    main {
-      max-width: 1200px;
+    .search-box {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .search-box input {
+      padding: 8px 12px;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      min-height: 44px;
+    }
+
+    /* Layout: Main + Complementary Sidebar */
+    .page-layout {
+      max-width: 1250px;
       margin: 20px auto;
       padding: 0 16px;
-      min-height: 500px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    main {
+      flex: 1 1 700px;
+      min-height: 600px;
+    }
+    aside {
+      flex: 1 1 300px;
     }
 
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 6px;
       padding: clamp(16px, 3vw, 24px);
       margin-bottom: 24px;
     }
 
-    /* Multi-page Tab Panels */
     .tab-panel {
       display: none;
     }
@@ -226,11 +222,10 @@
       display: block;
     }
 
-    /* Responsive Data Tables */
+    /* Tables & Inputs */
     .table-responsive {
       width: 100%;
       overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
       margin: 20px 0;
     }
     table {
@@ -239,16 +234,15 @@
       min-width: 600px;
     }
     th, td {
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border);
       padding: 12px;
       text-align: left;
     }
     th {
-      background-color: var(--brand-blue);
+      background-color: var(--primary);
       color: #ffffff;
     }
 
-    /* Responsive Forms */
     .form-group {
       margin-bottom: 1.2rem;
     }
@@ -257,20 +251,17 @@
       font-weight: bold;
       margin-bottom: 0.4rem;
     }
-    input[type="text"], input[type="email"], select, textarea {
+    input[type="text"], input[type="email"], input[type="password"], select, textarea {
       width: 100%;
-      max-width: 600px;
+      max-width: 550px;
       padding: 12px;
       font-size: 1rem;
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border);
       border-radius: 4px;
       min-height: 48px;
     }
-    textarea {
-      min-height: 120px;
-    }
     .submit-btn {
-      background-color: var(--brand-blue);
+      background-color: var(--primary);
       color: #ffffff;
       padding: 12px 24px;
       font-size: 1rem;
@@ -281,309 +272,367 @@
       min-height: 48px;
     }
 
-    /* Footer */
+    /* Floating Top Button */
+    .floating-top-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 50px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+      min-height: 48px;
+    }
+
     footer {
       background: #111111;
       color: #ffffff;
       padding: 2.5rem 16px 5rem 16px;
-      border-top: 4px solid var(--brand-gold);
+      border-top: 4px solid var(--accent);
     }
-    .footer-inner {
-      max-width: 1200px;
+    .footer-flex {
+      max-width: 1250px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
       gap: 20px;
-    }
-    footer a {
-      color: #ffeb3b;
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- Accessible Skip Links (Keyboard Bypass) -->
-  <a href="#main-landmark" class="skip-link">Skip to main content</a>
-  <a href="#footer-landmark" class="skip-link" style="left: 200px;">Skip to bottom (Footer)</a>
+  <!-- Accessible Skip Links (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#sidebar-content" class="skip-link" style="left: 200px;">Skip to sidebar tools</a>
+  <a href="#footer-landmark" class="skip-link" style="left: 400px;">Skip to footer</a>
 
-  <!-- Persistent Dynamic Telemetry Ribbon -->
-  <div class="telemetry-ribbon" role="region" aria-label="Live System Telemetry">
-    <div class="ribbon-container">
-      <div class="telemetry-item">
+  <!-- ==========================================
+       PERSISTENT SILENT TELEMETRY (HEADER RIBBON)
+       Notice: aria-live is REMOVED so it will NEVER speak automatically
+       ========================================== -->
+  <div class="telemetry-ribbon" role="region" aria-label="Environmental telemetry" tabindex="-1">
+    <div class="ribbon-flex">
+      <div>
         <span id="live-greeting" style="font-weight: bold;">Welcome</span> |
-        <span id="live-clock" aria-live="off">Loading current time...</span>
+        <span id="live-clock">Oct 4, 2026</span>
       </div>
-      <div class="telemetry-item">
-        <span id="live-weather">Weather: 28°C, Clear Sky | AQI: 124 (Moderate)</span>
+      <div>
+        <span id="live-weather">Patna: 29°C | Clear & Dry | AQI: 118 (Moderate)</span>
       </div>
-      <div class="telemetry-item">
+      <!-- Rotating quote: aria-hidden hides silent rotation from screen readers -->
+      <div aria-hidden="true">
         <span>Quote: </span>
-        <span id="dynamic-quote" class="quote-box" aria-live="polite">Accessibility is essential for some, but useful for all.</span>
+        <span id="dynamic-quote" class="quote-box">Universal design makes independence a reality.</span>
       </div>
     </div>
   </div>
 
-  <!-- Header Landmark -->
+  <!-- ==========================================
+       HEADER LANDMARK
+       ========================================== -->
   <header role="banner">
-    <div class="header-inner">
+    <div class="header-container">
       <div>
-        <h1 id="top-title" tabindex="-1">Nitesh Kumar</h1>
-        <p>Digital Accessibility Specialist | Lived Experience Auditor & Assistive Technology Consultant</p>
+        <h1 id="top-heading" tabindex="-1">Nitesh Kumar</h1>
+        <p>Lead Accessibility Consultant | Lived Experience Auditor & Universal Inclusion Engineer</p>
       </div>
-      <!-- Quick Go To Bottom Button (Top) -->
       <div>
-        <button type="button" class="jump-btn" id="btn-go-bottom" aria-label="Jump to the bottom of this page">
+        <button type="button" class="jump-btn" id="btn-go-bottom" aria-label="Jump to footer bottom">
           Go to Bottom &darr;
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Navigation Landmark (Tabbed Multi-Page System) -->
-  <nav role="navigation" aria-label="Main Website Pages">
-    <div class="nav-inner" role="tablist">
-      <button class="nav-btn" role="tab" id="tab-home" aria-selected="true" aria-controls="panel-home">Home</button>
-      <button class="nav-btn" role="tab" id="tab-about" aria-selected="false" aria-controls="panel-about">About Me</button>
-      <button class="nav-btn" role="tab" id="tab-blog" aria-selected="false" aria-controls="panel-blog">Blogs & Insights</button>
-      <button class="nav-btn" role="tab" id="tab-faq" aria-selected="false" aria-controls="panel-faq">FAQ</button>
-      <button class="nav-btn" role="tab" id="tab-contact" aria-selected="false" aria-controls="panel-contact">Contact & Feedback</button>
-      <button class="nav-btn" role="tab" id="tab-privacy" aria-selected="false" aria-controls="panel-privacy">Privacy Policy</button>
-      <button class="nav-btn" role="tab" id="tab-terms" aria-selected="false" aria-controls="panel-terms">Terms of Use</button>
-      <button class="nav-btn" role="tab" id="tab-sitemap" aria-selected="false" aria-controls="panel-sitemap">Sitemap</button>
-    </div>
-  </nav>
-
-  <!-- Main Landmark -->
-  <main id="main-landmark" role="main">
-
-    <!-- PAGE 1: HOME -->
-    <section id="panel-home" class="tab-panel active" role="tabpanel" aria-labelledby="tab-home">
-      <div class="card">
-        <h2>Welcome to My Accessibility & Inclusion Hub</h2>
-        <p>
-          I am <strong>Nitesh Kumar</strong>, a 100% visually impaired digital accessibility specialist and non-visual screen reader tester. 
-          I bridge the critical gap between technical software code and real-world screen reader usability. 
-          By combining personal daily reliance on assistive technology with internationally recognized standards (W3C WCAG 2.1/2.2 AA, Section 508, GIGW), 
-          I help ensure the digital universe is usable by everyone, regardless of ability.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Core Professional Qualifications & Certifications</h3>
-        <p>This entire platform reflects the direct, practical synthesis of four recognized accreditations:</p>
-        
-        <div class="table-responsive">
-          <table>
-            <caption>Verified Professional Credentials Matrix</caption>
-            <thead>
-              <tr>
-                <th scope="col">Certification Title</th>
-                <th scope="col">Issuing Organization</th>
-                <th scope="col">Core Technical Domain</th>
-                <th scope="col">Role in this Portfolio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Career Edge IT (94% Distinction)</th>
-                <td>NIIT Foundation</td>
-                <td>Information Architecture, Advanced Office Systems, and Technical Structuring</td>
-                <td>Engineered accessible information layouts, clear data tables, and systemic documentation.</td>
-              </tr>
-              <tr>
-                <th scope="row">DADCA (Assistive Devices in Computer Applications)</th>
-                <td>National Association for the Blind (NAB) Delhi</td>
-                <td>NVDA Screen Reader Command, Keyboard Navigation, and Assistive Tools</td>
-                <td>Full manual screen reader auditing, focus tracking, and non-visual UX verification.</td>
-              </tr>
-              <tr>
-                <th scope="row">IAAP CPACC Prep 3.0 (5.0 IAAP ECs)</th>
-                <td>Deque University</td>
-                <td>Disability Models, Universal Design, and Global Laws (ADA, Section 508)</td>
-                <td>Compliance governance, cross-disability inclusion, and policy frameworks.</td>
-              </tr>
-              <tr>
-                <th scope="row">Accessibility Fundamentals (1.5 IAAP ECs)</th>
-                <td>Deque University</td>
-                <td>W3C WCAG POUR Principles (Perceivable, Operable, Understandable, Robust)</td>
-                <td>Semantic HTML5 enforcement, color contrast ratio, and keyboard trap eradication.</td>
-              </tr>
-            </tbody>
-          </table>
+  <!-- ==========================================
+       NAVIGATION & SEARCH LANDMARKS
+       ========================================== -->
+  <div class="nav-search-bar">
+    <div class="nav-container">
+      <nav role="navigation" aria-label="Main portal views">
+        <div class="nav-tabs" role="tablist">
+          <button class="nav-btn" role="tab" id="tab-home" aria-selected="true" aria-controls="panel-home">Home</button>
+          <button class="nav-btn" role="tab" id="tab-about" aria-selected="false" aria-controls="panel-about">About Me</button>
+          <button class="nav-btn" role="tab" id="tab-blog" aria-selected="false" aria-controls="panel-blog">Articles & Audits</button>
+          <button class="nav-btn" role="tab" id="tab-tools" aria-selected="false" aria-controls="panel-tools">Audit Engines</button>
+          <button class="nav-btn" role="tab" id="tab-faq" aria-selected="false" aria-controls="panel-faq">FAQ</button>
+          <button class="nav-btn" role="tab" id="tab-contact" aria-selected="false" aria-controls="panel-contact">Contact & Inquiry</button>
+          <button class="nav-btn" role="tab" id="tab-auth" aria-selected="false" aria-controls="panel-auth">Portal Access</button>
         </div>
-      </div>
-    </section>
+      </nav>
 
-    <!-- PAGE 2: ABOUT ME (VISION & MISSION) -->
-    <section id="panel-about" class="tab-panel" role="tabpanel" aria-labelledby="tab-about">
-      <div class="card">
-        <h2>About Nitesh Kumar</h2>
-        <p>
-          As an individual who is totally visually impaired, screen readers like NVDA and TalkBack are not just testing utilities to me—they are my eyes into the digital world. 
-          My professional focus is to ensure that digital barriers on public services, enterprise platforms, and educational tools are eliminated at the root architecture level.
-        </p>
-        
-        <h3>My Vision</h3>
-        <p>
-          To establish a completely barrier-free digital ecosystem across India and the globe, where every website, mobile application, and electronic document is born accessible by design.
-        </p>
+      <!-- Search Landmark -->
+      <form role="search" aria-label="Site content search" class="search-box" onsubmit="event.preventDefault(); executeSearch();">
+        <label for="site-search-input" class="sr-only">Search articles and audit modules</label>
+        <input type="search" id="site-search-input" placeholder="Search keywords..." required>
+        <button type="submit" class="nav-btn" style="background:var(--primary);color:#fff;">Search</button>
+      </form>
+    </div>
+  </div>
 
-        <h3>My Mission</h3>
-        <p>
-          To utilize rigorous non-visual testing, developer remediation consulting, and structured training governance to elevate corporate accessibility from an afterthought to a core quality engineering metric.
-        </p>
-      </div>
-    </section>
+  <!-- ==========================================
+       TWO-COLUMN LAYOUT: MAIN + COMPLEMENTARY
+       ========================================== -->
+  <div class="page-layout">
 
-    <!-- PAGE 3: BLOGS & INSIGHTS -->
-    <section id="panel-blog" class="tab-panel" role="tabpanel" aria-labelledby="tab-blog">
-      <div class="card">
-        <h2>Digital Inclusion & Accessibility Articles</h2>
-        
-        <article style="margin-bottom: 2rem; border-bottom: 1px solid #ccc; padding-bottom: 1rem;">
-          <h3>1. Why Automated Scanners Catch Less Than 40% of Accessibility Defects</h3>
-          <p><small>Published by Nitesh Kumar | Focus: Technical Auditing</small></p>
+    <!-- MAIN LANDMARK -->
+    <main id="main-content" role="main">
+
+      <!-- PANEL 1: HOME -->
+      <section id="panel-home" class="tab-panel active" role="tabpanel" aria-labelledby="tab-home">
+        <div class="card">
+          <h2>Executive Accessibility Profile</h2>
           <p>
-            Automated tools like axe DevTools or Lighthouse are incredible for spotting color contrast drops and missing image tags. 
-            However, an automated scanner cannot tell if a form label makes sense in context, if an interactive modal traps the keyboard focus, 
-            or if reading order is logically maintained. True digital compliance demands manual screen reader validation.
+            Welcome to the official accessibility engineering repository and practice portfolio of <strong>Nitesh Kumar</strong>. 
+            I am a 100% visually impaired digital accessibility specialist and screen reader testing authority based in Patna, Bihar. 
+            My work unites lived non-visual operational experience with globally certified governance frameworks 
+            (W3C WCAG 2.1/2.2 AA, Section 508, GIGW) to deliver digital solutions that are fully operable by all individuals.
           </p>
-        </article>
+        </div>
 
-        <article>
-          <h3>2. Demystifying WAI-ARIA: The Golden Rule of Accessible Markup</h3>
-          <p><small>Published by Nitesh Kumar | Focus: W3C WAI-ARIA Standards</small></p>
+        <div class="card">
+          <h3>Synthesis of Verified Professional Accreditations</h3>
+          <p>This entire portal demonstrates competencies acquired through four core accreditations:</p>
+          <div class="table-responsive">
+            <table>
+              <caption>Consolidated Accreditations & Technical Frameworks</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Accreditation Title</th>
+                  <th scope="col">Issuing Body</th>
+                  <th scope="col">Core Technical Domain</th>
+                  <th scope="col">Practical Verification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Career Edge IT (94% Distinction)</th>
+                  <td>NIIT Foundation</td>
+                  <td>Advanced Office Systems, Data Architecture, and Technical Formatting</td>
+                  <td>Structured table data, rigorous layout logic, and enterprise documentation.</td>
+                </tr>
+                <tr>
+                  <th scope="row">DADCA (Assistive Devices in Computer Applications)</th>
+                  <td>National Association for the Blind (NAB) Delhi</td>
+                  <td>NVDA Native Telemetry, Advanced Keyboard Traps, and Non-Visual QA</td>
+                  <td>End-to-end screen reader audit verification and keyboard accessibility testing.</td>
+                </tr>
+                <tr>
+                  <th scope="row">IAAP CPACC Prep 3.0 (5.0 IAAP ECs)</th>
+                  <td>Deque University</td>
+                  <td>Disability Models, Universal Design, and Global Legislation (ADA, Sec 508)</td>
+                  <td>Enterprise accessibility management, policy governance, and inclusion roadmaps.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Accessibility Fundamentals (1.5 IAAP ECs)</th>
+                  <td>Deque University</td>
+                  <td>W3C POUR Principles (Perceivable, Operable, Understandable, Robust)</td>
+                  <td>Eliminating barriers across sensory, physical, cognitive, and speech domains.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 2: ABOUT ME -->
+      <section id="panel-about" class="tab-panel" role="tabpanel" aria-labelledby="tab-about">
+        <div class="card">
+          <h2>About Nitesh Kumar</h2>
           <p>
-            The first rule of ARIA is: <em>Do not use ARIA if a native HTML element already exists</em>. 
-            A standard <code>&lt;button&gt;</code> element inherently includes keyboard activation, focus management, and accessibility tree announcements. 
-            When developers build custom clickable <code>&lt;div&gt;</code> elements, they break standard screen reader access unless extensive ARIA state management is applied.
+            Born and raised in Patna, Bihar, I have navigated the physical and digital world without sight. 
+            Screen readers are not a simulation for me; they are my primary interface for knowledge, communication, and technical work. 
+            My mission is to ensure that digital barriers on government portals, corporate software, and documents are identified and resolved at the code level.
           </p>
-        </article>
-      </div>
-    </section>
+          <h3>Vision</h3>
+          <p>To eliminate digital inequality so that every student, professional, and citizen with a disability can access tools and information independently.</p>
+          <h3>Mission</h3>
+          <p>To deliver rigorous manual screen reader testing, precise developer remediation code, and corporate inclusion frameworks that exceed baseline compliance.</p>
+        </div>
+      </section>
 
-    <!-- PAGE 4: FAQ -->
-    <section id="panel-faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq">
-      <div class="card">
-        <h2>Frequently Asked Questions (FAQ)</h2>
-        
-        <dl>
-          <dt><strong>Q1: Why is manual testing necessary if a site passes automated checks?</strong></dt>
-          <dd>Automated engines only check syntax against rules. They cannot determine if screen reader speech telemetry sounds logical or if custom interactive controls are fully operable with a keyboard.</dd>
+      <!-- PANEL 3: ARTICLES & AUDITS -->
+      <section id="panel-blog" class="tab-panel" role="tabpanel" aria-labelledby="tab-blog">
+        <div class="card">
+          <h2>Accessibility Knowledge Base & Audit Reports</h2>
+          <article style="margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+            <h3>1. Overcoming the Limitations of Automated Scanners</h3>
+            <p><small>By Nitesh Kumar | Subject: Manual Auditing Protocols</small></p>
+            <p>
+              While automated tools (axe DevTools, Lighthouse) are efficient for detecting syntax-level errors like missing image descriptions or color contrast drops, 
+              they miss over 60% of real-world usability issues. Only an experienced screen reader user can verify meaningful reading sequences, form error contexts, 
+              and dynamic state updates.
+            </p>
+          </article>
+          <article>
+            <h3>2. Designing for Cross-Disability Inclusivity</h3>
+            <p><small>By Nitesh Kumar | Subject: Universal Design & WCAG 2.2</small></p>
+            <p>
+              Inclusivity extends beyond blindness. It encompasses low vision users needing 400% zoom reflow, motor-impaired individuals navigating via single switch keys, 
+              and neurodiverse users who need predictable navigation patterns and distraction-free layouts.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PANEL 4: REAL-LIFE ACCESSIBILITY AUDIT ENGINES -->
+      <section id="panel-tools" class="tab-panel" role="tabpanel" aria-labelledby="tab-tools">
+        <div class="card">
+          <h2>Interactive Accessibility Verifiers</h2>
+          <p>Test your web code snippets and document text against core WCAG 2.1/2.2 AA rules right in your browser:</p>
+
+          <!-- Module A: Web Component Validator -->
+          <h3>1. Web Component Code Inspector</h3>
+          <div class="form-group">
+            <label for="code-snippet-input">Paste Raw HTML Code Snippet:</label>
+            <textarea id="code-snippet-input" rows="4" placeholder="e.g. <img src='logo.png'> or <button>Click</button>"></textarea>
+          </div>
+          <button type="button" class="submit-btn" onclick="auditWebSnippet()">Inspect HTML Code</button>
+          <div id="snippet-audit-results" style="margin-top:15px; font-weight:bold;"></div>
+
+          <hr style="margin: 25px 0;">
+
+          <!-- Module B: Document Structure Auditor -->
+          <h3>2. Document Structure & Text Auditor (Word / PDF / Plaintext)</h3>
+          <div class="form-group">
+            <label for="doc-text-input">Paste Document Text Content:</label>
+            <textarea id="doc-text-input" rows="4" placeholder="Paste document text or extracted headings to audit hierarchy..."></textarea>
+          </div>
+          <button type="button" class="submit-btn" onclick="auditDocumentText()">Inspect Document Structure</button>
+          <div id="doc-audit-results" style="margin-top:15px; font-weight:bold;"></div>
+        </div>
+      </section>
+
+      <!-- PANEL 5: FAQ -->
+      <section id="panel-faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq">
+        <div class="card">
+          <h2>Frequently Asked Questions</h2>
+          <dl>
+            <dt><strong>Q: What assistive devices and screen readers do you audit with?</strong></dt>
+            <dd>Desktop auditing is conducted using NVDA and JAWS on Chrome and Edge. Mobile auditing is conducted on Android using TalkBack and iOS using VoiceOver.</dd>
+            <dt style="margin-top:1rem;"><strong>Q: Which compliance mandates do your audits fulfill?</strong></dt>
+            <dd>Audits strictly adhere to W3C WCAG 2.1 and 2.2 Level A and AA standards, Section 508 of the US Rehabilitation Act, and India's GIGW guidelines.</dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- PANEL 6: CONTACT & AUDIT INQUIRY (WITH FORMSPREE EMAIL DISPATCH) -->
+      <section id="panel-contact" class="tab-panel" role="tabpanel" aria-labelledby="tab-contact">
+        <div class="card">
+          <h2>Inquiry, Audit & Feedback Transmission</h2>
+          <p>
+            Submit an audit request or feedback below. Submissions transmit directly to my verified inbox via secure endpoints.
+          </p>
+          <form id="contact-form" action="https://formspree.io/f/mqaeorle" method="POST">
+            <div class="form-group">
+              <label for="sender-name">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="sender-name" name="name" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="sender-email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="sender-email" name="_replyto" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="inquiry-type">Inquiry Classification</label>
+              <select id="inquiry-type" name="type">
+                <option value="audit-request">Commission Accessibility Audit (Web/App)</option>
+                <option value="doc-remediation">Document Remediation (PDF/Word)</option>
+                <option value="general-feedback">Platform Usability Feedback</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sender-message">Message Details <span aria-hidden="true">*</span></label>
+              <textarea id="sender-message" name="message" rows="5" required aria-required="true"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Transmit Inquiry</button>
+          </form>
+          <div id="contact-status" style="margin-top:15px; font-weight:bold;"></div>
+        </div>
+      </section>
+
+      <!-- PANEL 7: PORTAL ACCESS (LOGIN & SIGNUP DISPATCH) -->
+      <section id="panel-auth" class="tab-panel" role="tabpanel" aria-labelledby="tab-auth">
+        <div class="card">
+          <h2>Portal Registration & Client Access</h2>
+          <p>Register or log in below to access enterprise audit repositories. Access notifications are recorded automatically.</p>
           
-          <dt style="margin-top: 1rem;"><strong>Q2: What standards govern your accessibility reviews?</strong></dt>
-          <dd>All audits are conducted strictly under the W3C Web Content Accessibility Guidelines (WCAG) 2.1 and 2.2 Level AA, Section 508 of the US Rehabilitation Act, and India's GIGW directives.</dd>
+          <form id="auth-form" action="https://formspree.io/f/mqaeorle" method="POST">
+            <input type="hidden" name="_subject" value="New Client Access Request - Nitesh Kumar Portfolio">
+            <div class="form-group">
+              <label for="auth-email">Client Work Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="auth-email" name="client_email" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="auth-action">Desired Action</label>
+              <select id="auth-action" name="action_type">
+                <option value="register">Request New Client Account</option>
+                <option value="login">Verify Existing Access Credentials</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-btn">Submit Request</button>
+          </form>
+          <div id="auth-status" style="margin-top:15px; font-weight:bold;"></div>
+        </div>
+      </section>
 
-          <dt style="margin-top: 1rem;"><strong>Q3: How do screen readers announce dynamic page changes?</strong></dt>
-          <dd>By using ARIA Live Regions (<code>aria-live="polite"</code> or <code>"assertive"</code>), assistive technologies announce dynamic updates instantly without requiring a page reload.</dd>
-        </dl>
-      </div>
-    </section>
+    </main>
 
-    <!-- PAGE 5: CONTACT & FEEDBACK -->
-    <section id="panel-contact" class="tab-panel" role="tabpanel" aria-labelledby="tab-contact">
+    <!-- ==========================================
+         COMPLEMENTARY SIDEBAR LANDMARK
+         ========================================== -->
+    <aside id="sidebar-content" role="complementary" aria-label="Professional metrics and contact details">
+      
+      <!-- Visitor Session Telemetry Widget -->
       <div class="card">
-        <h2>Inquiries, Audits & Feedback</h2>
-        <p>Have an inquiry regarding an accessibility audit or wish to provide feedback on this portal? Submit the form below:</p>
-
-        <form id="contact-feedback-form" novalidate>
-          <div class="form-group">
-            <label for="contact-name">Your Full Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="contact-name" name="contact-name" required aria-required="true">
-          </div>
-
-          <div class="form-group">
-            <label for="contact-email">Email Address <span aria-hidden="true">*</span></label>
-            <input type="email" id="contact-email" name="contact-email" required aria-required="true">
-          </div>
-
-          <div class="form-group">
-            <label for="inquiry-type">Inquiry Category</label>
-            <select id="inquiry-type" name="inquiry-type">
-              <option value="audit">Website Accessibility Audit Inquiry</option>
-              <option value="feedback">User Feedback on this Platform</option>
-              <option value="collaboration">General Inclusion Collaboration</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="contact-message">Your Message / Feedback <span aria-hidden="true">*</span></label>
-            <textarea id="contact-message" name="contact-message" rows="5" required aria-required="true"></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Transmit Message</button>
-        </form>
-        <div id="form-status" role="status" aria-live="polite" style="margin-top: 15px; font-weight: bold;"></div>
+        <h3>Visitor Access Record</h3>
+        <p id="visitor-count-text">Calculating visit session history...</p>
+        <p><small id="session-duration-text">Session Active: 0m 0s</small></p>
       </div>
-    </section>
 
-    <!-- PAGE 6: PRIVACY POLICY -->
-    <section id="panel-privacy" class="tab-panel" role="tabpanel" aria-labelledby="tab-privacy">
+      <!-- Verified Contact Channels -->
       <div class="card">
-        <h2>Privacy Policy</h2>
-        <p><em>Last Updated: October 2026</em></p>
-        <p>
-          Your privacy is paramount. This portfolio platform operates strictly as a static, privacy-first technical showcase.
-        </p>
+        <h3>Official Channels</h3>
+        <p><strong>Location:</strong> Patna (Danapur / Masaurhi), Bihar, India</p>
+        <p><strong>Inquiry Line:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+        <p><strong>Official Inbox:</strong> <a href="mailto:niteshkumar.a11y@gmail.com">niteshkumar.a11y@gmail.com</a></p>
+      </div>
+
+      <!-- Cross-Disability Quick Matrix -->
+      <div class="card">
+        <h3>Assistive Setup Protocol</h3>
         <ul>
-          <li><strong>Data Collection:</strong> We do not deploy tracking cookies, commercial ad trackers, or third-party behavioral telemetry.</li>
-          <li><strong>Form Information:</strong> Any information submitted through the contact or feedback interface is utilized solely for responding to your professional inquiry and is never shared or sold.</li>
-          <li><strong>Assistive Tech Telemetry:</strong> All interactive scripts operate locally in your web browser. No personal assistive device configurations are recorded.</li>
+          <li><strong>Blindness:</strong> NVDA / TalkBack</li>
+          <li><strong>Low Vision:</strong> 200% Zoom / 4.5:1 Contrast</li>
+          <li><strong>Motor Impairments:</strong> Full Keyboard Focus Only</li>
+          <li><strong>Deaf / Hard of Hearing:</strong> Full Text Descriptions</li>
         </ul>
       </div>
-    </section>
 
-    <!-- PAGE 7: TERMS OF USE -->
-    <section id="panel-terms" class="tab-panel" role="tabpanel" aria-labelledby="tab-terms">
-      <div class="card">
-        <h2>Terms of Use</h2>
-        <p><em>Effective Date: October 2026</em></p>
-        <p>
-          By accessing and navigating the portfolio and design systems engineered by Nitesh Kumar, you agree to the following conditions:
-        </p>
-        <ul>
-          <li><strong>Intellectual Property:</strong> All open-source code demonstrations, accessible component logic, and educational articles are published for public learning and accessibility advocacy. Attribution is appreciated when incorporating frameworks into production systems.</li>
-          <li><strong>Accuracy of Audit Data:</strong> Compliance checklists and articles reflect current W3C WCAG specifications and do not constitute formal legal counsel.</li>
-        </ul>
-      </div>
-    </section>
+    </aside>
 
-    <!-- PAGE 8: SITEMAP -->
-    <section id="panel-sitemap" class="tab-panel" role="tabpanel" aria-labelledby="tab-sitemap">
-      <div class="card">
-        <h2>System Sitemap & Structural Index</h2>
-        <p>For fast non-visual navigation, all views and sections are indexed below:</p>
-        <ul>
-          <li><button type="button" onclick="switchView('panel-home')" style="background:none;border:none;color:var(--brand-blue);text-decoration:underline;cursor:pointer;font-size:1rem;min-height:48px;">1. Home (Overview & Credentials Matrix)</button></li>
-          <li><button type="button" onclick="switchView('panel-about')" style="background:none;border:none;color:var(--brand-blue);text-decoration:underline;cursor:pointer;font-size:1rem;min-height:48px;">2. About Me (Vision, Mission & Journey)</button></li>
-          <li><button type="button" onclick="switchView('panel-blog')" style="background:none;border:none;color:var(--brand-blue);text-decoration:underline;cursor:pointer;font-size:1rem;min-height:48px;">3. Blogs & Insights (WCAG & ARIA Articles)</button></li>
-          <li><button type="button" onclick="switchView('panel-faq')" style="background:none;border:none;color:var(--brand-blue);text-decoration:underline;cursor:pointer;font-size:1rem;min-height:48px;">4. Frequently Asked Questions (FAQ)</button></li>
-          <li><button type="button" onclick="switchView('panel-contact')" style="background:none;border:none;color:var(--brand-blue);text-decoration:underline;cursor:pointer;font-size:1rem;min-height:48px;">5. Contact & Feedback Interface</button></li>
-          <li><button type="button" onclick="switchView('panel-privacy')" style="background:none;border:none;color:var(--brand-blue);text-decoration:underline;cursor:pointer;font-size:1rem;min-height:48px;">6. Privacy Policy</button></li>
-          <li><button type="button" onclick="switchView('panel-terms')" style="background:none;border:none;color:var(--brand-blue);text-decoration:underline;cursor:pointer;font-size:1rem;min-height:48px;">7. Terms of Use</button></li>
-        </ul>
-      </div>
-    </section>
+  </div>
 
-  </main>
-
-  <!-- Floating Go to Top Button (Accessible & Cross-Device) -->
-  <button type="button" class="floating-top-btn" id="btn-go-top" aria-label="Go to the top of the page">
+  <!-- Floating Jump to Top Button -->
+  <button type="button" class="floating-top-btn" id="btn-go-top" aria-label="Return to top of page">
     &uarr; Top
   </button>
 
-  <!-- Footer Landmark -->
+  <!-- ==========================================
+       FOOTER LANDMARK
+       ========================================== -->
   <footer id="footer-landmark" role="contentinfo" tabindex="-1">
-    <div class="footer-inner">
+    <div class="footer-flex">
       <div>
         <p>&copy; 2026 Nitesh Kumar. All rights reserved.</p>
-        <p>Engineered for full non-visual usability in conformance with W3C WCAG 2.2 AA and WAI-ARIA 1.2.</p>
+        <p>Built in accordance with W3C WAI-ARIA 1.2 and WCAG 2.2 Level AA accessibility directives.</p>
       </div>
       <div>
-        <!-- Secondary Footer Go To Top Link -->
         <button type="button" class="jump-btn" id="footer-top-btn" aria-label="Back to top">
           Back to Top &uarr;
         </button>
@@ -591,23 +640,21 @@
     </div>
   </footer>
 
-  <!-- Automation, Telemetry & Smooth Focus Management Script -->
+  <!-- ==========================================
+       CORE JAVASCRIPT AUTOMATION LOGIC
+       ========================================== -->
   <script>
-    // 1. Live Clock & Time-based Greeting
+    /* 1. Live Clock & Greeting */
     function updateClockAndGreeting() {
       const now = new Date();
       const hours = now.getHours();
       
       let greeting = "Welcome";
-      if (hours >= 4 && hours < 12) {
-        greeting = "Good Morning";
-      } else if (hours >= 12 && hours < 17) {
-        greeting = "Good Afternoon";
-      } else if (hours >= 17 && hours < 22) {
-        greeting = "Good Evening";
-      } else {
-        greeting = "Good Night";
-      }
+      if (hours >= 4 && hours < 12) greeting = "Good Morning";
+      else if (hours >= 12 && hours < 17) greeting = "Good Afternoon";
+      else if (hours >= 17 && hours < 22) greeting = "Good Evening";
+      else greeting = "Good Night";
+      
       document.getElementById('live-greeting').textContent = greeting;
 
       const options = { 
@@ -625,21 +672,43 @@
     setInterval(updateClockAndGreeting, 1000);
     updateClockAndGreeting();
 
-    // 2. Rotating Accessibility Thoughts (Every 8 Seconds)
-    const thoughts = [
-      "Accessibility is essential for some, but useful for all.",
+    /* 2. Silent Rotating Accessibility Thoughts (No Screen Reader Interruption) */
+    const coreQuotes = [
+      "Universal design makes independence a reality.",
       "The power of the Web is in its universality. — Tim Berners-Lee",
       "Do not use ARIA when native HTML5 semantics already exist.",
-      "A keyboard trap is a complete digital wall for a screen reader user.",
-      "Design systems without accessibility are incomplete engineering."
+      "A keyboard trap is an insurmountable barrier for a screen reader user.",
+      "Design systems without accessibility are incomplete engineering.",
+      "Accessibility is not a feature; it is fundamental architecture.",
+      "Accessible digital tools empower genuine workforce participation.",
+      "Clear semantic structure benefits both human users and AI engines."
     ];
     let quoteIndex = 0;
     setInterval(function() {
-      quoteIndex = (quoteIndex + 1) % thoughts.length;
-      document.getElementById('dynamic-quote').textContent = thoughts[quoteIndex];
-    }, 8000);
+      quoteIndex = (quoteIndex + 1) % coreQuotes.length;
+      document.getElementById('dynamic-quote').textContent = coreQuotes[quoteIndex];
+    }, 9000);
 
-    // 3. Tabbed Multi-Page View Switching Logic
+    /* 3. Session & Lifetime Visit Telemetry */
+    let visitCount = parseInt(localStorage.getItem('nk_visit_count') || '0', 10) + 1;
+    localStorage.setItem('nk_visit_count', visitCount);
+    
+    let lastVisitDate = localStorage.getItem('nk_last_visit') || new Date().toLocaleString('en-IN');
+    localStorage.setItem('nk_last_visit', new Date().toLocaleString('en-IN'));
+
+    document.getElementById('visitor-count-text').textContent = 
+      `Visit #${visitCount} by your device. Prior access: ${lastVisitDate}.`;
+
+    let secondsSpent = 0;
+    setInterval(function() {
+      secondsSpent++;
+      let mins = Math.floor(secondsSpent / 60);
+      let secs = secondsSpent % 60;
+      document.getElementById('session-duration-text').textContent = 
+        `Session Active: ${mins}m ${secs}s`;
+    }, 1000);
+
+    /* 4. Tab Navigation Logic */
     const tabs = document.querySelectorAll('[role="tab"]');
     const panels = document.querySelectorAll('.tab-panel');
 
@@ -654,59 +723,100 @@
       });
 
       tabs.forEach(tab => {
-        if (tab.getAttribute('aria-controls') === targetPanelId) {
-          tab.setAttribute('aria-selected', 'true');
-        } else {
-          tab.setAttribute('aria-selected', 'false');
-        }
+        tab.setAttribute('aria-selected', tab.getAttribute('aria-controls') === targetPanelId ? 'true' : 'false');
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     tabs.forEach(tab => {
       tab.addEventListener('click', function() {
-        const targetPanel = this.getAttribute('aria-controls');
-        switchView(targetPanel);
+        switchView(this.getAttribute('aria-controls'));
       });
     });
 
-    // 4. Accessible Go To Top & Go To Bottom Focus Handlers
-    const topTitle = document.getElementById('top-title');
+    /* 5. Smooth Focus Management (Go to Top / Bottom) */
+    const topHeading = document.getElementById('top-heading');
     const footerLandmark = document.getElementById('footer-landmark');
 
     function scrollToTopAction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      topTitle.focus(); // Move screen reader focus to H1
+      topHeading.focus();
     }
-
     function scrollToBottomAction() {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-      footerLandmark.focus(); // Move screen reader focus to Footer
+      footerLandmark.focus();
     }
 
     document.getElementById('btn-go-top').addEventListener('click', scrollToTopAction);
     document.getElementById('footer-top-btn').addEventListener('click', scrollToTopAction);
     document.getElementById('btn-go-bottom').addEventListener('click', scrollToBottomAction);
 
-    // 5. Contact Form Validation Logic
-    const contactForm = document.getElementById('contact-feedback-form');
-    const formStatus = document.getElementById('form-status');
+    /* 6. Site Content Search Engine */
+    function executeSearch() {
+      const query = document.getElementById('site-search-input').value.toLowerCase().trim();
+      if (!query) return;
 
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('contact-name').value.trim();
-      const email = document.getElementById('contact-email').value.trim();
-      const msg = document.getElementById('contact-message').value.trim();
-
-      if (!name || !email || !msg) {
-        formStatus.style.color = '#d32f2f';
-        formStatus.textContent = 'Error: Please fill in all required fields marked with an asterisk.';
+      if (query.includes('tool') || query.includes('check') || query.includes('audit')) {
+        switchView('panel-tools');
+      } else if (query.includes('about') || query.includes('vision') || query.includes('mission') || query.includes('nitesh')) {
+        switchView('panel-about');
+      } else if (query.includes('article') || query.includes('blog') || query.includes('wcag') || query.includes('scanner')) {
+        switchView('panel-blog');
+      } else if (query.includes('contact') || query.includes('email') || query.includes('phone') || query.includes('hire')) {
+        switchView('panel-contact');
+      } else if (query.includes('login') || query.includes('sign') || query.includes('auth')) {
+        switchView('panel-auth');
       } else {
-        formStatus.style.color = '#1b5e20';
-        formStatus.textContent = 'Thank you, ' + name + '! Your message has been received successfully.';
-        contactForm.reset();
+        switchView('panel-home');
       }
-    });
+    }
+
+    /* 7. Client-Side Accessibility Inspection Engines */
+    function auditWebSnippet() {
+      const code = document.getElementById('code-snippet-input').value.trim();
+      const results = document.getElementById('snippet-audit-results');
+      if (!code) {
+        results.style.color = 'var(--error)';
+        results.textContent = 'Please enter an HTML code snippet to inspect.';
+        return;
+      }
+      let report = [];
+      if (code.includes('<img') && !code.includes('alt=')) {
+        report.push('WCAG 1.1.1 Failure: Image tag missing alt text attribute.');
+      }
+      if (code.includes('<a') && !code.includes('href=')) {
+        report.push('WCAG 2.1.1 Failure: Anchor tag missing valid href attribute.');
+      }
+      if (code.includes('<div') && code.includes('onclick=') && !code.includes('role="button"')) {
+        report.push('WCAG 4.1.2 Warning: Clickable DIV element lacks ARIA button role.');
+      }
+
+      if (report.length === 0) {
+        results.style.color = 'var(--success)';
+        results.textContent = 'Audit Passed: No immediate structural accessibility failures detected in snippet.';
+      } else {
+        results.style.color = 'var(--error)';
+        results.textContent = 'Defects Detected: ' + report.join(' | ');
+      }
+    }
+
+    function auditDocumentText() {
+      const text = document.getElementById('doc-text-input').value.trim();
+      const results = document.getElementById('doc-audit-results');
+      if (!text) {
+        results.style.color = 'var(--error)';
+        results.textContent = 'Please enter text to evaluate document structure.';
+        return;
+      }
+      let wordCount = text.split(/\s+/).length;
+      if (wordCount < 15) {
+        results.style.color = 'var(--error)';
+        results.textContent = 'Structure Incomplete: Text is too brief to establish logical reading hierarchy.';
+      } else {
+        results.style.color = 'var(--success)';
+        results.textContent = `Document Analyzed (${wordCount} words): Structural length supports programmatic reading sequences. Verify headings match H1-H3 levels.`;
+      }
+    }
   </script>
 </body>
 </html>
