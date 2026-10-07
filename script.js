@@ -2,8 +2,8 @@
  * ============================================================================
  * JAVASCRIPT MASTER CONTROLLER - N-LABS (NITESH INCLUSION LABS)
  * Entity: N-Labs Ecosystem
- * Founder & Lead Auditor: Nitesh Kumar
- * Technical Standards: W3C WCAG 2.2 Level AAA, WAI-ARIA 1.2
+ * Directorate: Nitesh Kumar (Founder, CEO & Director)
+ * Technical Standards: W3C WCAG 2.2 Level AAA & WAI-ARIA 1.2
  * Architecture: Clean Vanilla JavaScript (Zero External Dependencies)
  * Timestamp: Wednesday, October 7, 2026 - IST
  * ============================================================================
@@ -22,12 +22,10 @@
     const dateEl = document.getElementById('live-date');
     const quoteEl = document.getElementById('dynamic-quote');
 
-    // 1. Live Running Clock, Date & Greeting
     function updateClockAndGreeting() {
       const now = new Date();
       const hours24 = now.getHours();
 
-      // Dynamic Contextual Greeting with Brand Name
       let greeting = 'Welcome to N-Labs';
       if (hours24 >= 4 && hours24 < 12) {
         greeting = 'Good Morning | Welcome to N-Labs';
@@ -43,7 +41,6 @@
         greetingEl.textContent = greeting;
       }
 
-      // Exact Time Formatting (HH:MM:SS AM/PM)
       if (clockEl) {
         clockEl.textContent = now.toLocaleTimeString('en-IN', {
           hour: '2-digit',
@@ -53,7 +50,6 @@
         });
       }
 
-      // Exact Date Formatting (Weekday, Day Month Year)
       if (dateEl) {
         dateEl.textContent = now.toLocaleDateString('en-IN', {
           weekday: 'long',
@@ -67,7 +63,6 @@
     updateClockAndGreeting();
     setInterval(updateClockAndGreeting, 1000);
 
-    // 2. Non-Repeating Rotating Thought Bank (Silent for Screen Readers)
     const thoughts = [
       "Universal design makes independence an unconditional reality.",
       "The power of the Web is in its universality. — Tim Berners-Lee",
@@ -88,7 +83,6 @@
     }
   }
 
-
   // ==========================================================================
   // MODULE 2: CROSS-DISABILITY ACCESSIBILITY DISPLAY CONTROLS
   // ==========================================================================
@@ -105,7 +99,6 @@
     let dyslexicFont = localStorage.getItem('nlabs_dyslexic') === 'true';
 
     function applyPreferences() {
-      // Contrast Mode
       if (highContrast) {
         document.body.classList.add('high-contrast-mode');
         if (btnContrast) btnContrast.setAttribute('aria-pressed', 'true');
@@ -114,7 +107,6 @@
         if (btnContrast) btnContrast.setAttribute('aria-pressed', 'false');
       }
 
-      // Dyslexic Typography
       if (dyslexicFont) {
         document.body.classList.add('dyslexic-font-mode');
         if (btnDyslexic) btnDyslexic.setAttribute('aria-pressed', 'true');
@@ -123,10 +115,8 @@
         if (btnDyslexic) btnDyslexic.setAttribute('aria-pressed', 'false');
       }
 
-      // Font Scale
       document.documentElement.style.fontSize = `${currentZoom * 100}%`;
 
-      // Save to localStorage
       localStorage.setItem('nlabs_high_contrast', highContrast);
       localStorage.setItem('nlabs_dyslexic', dyslexicFont);
       localStorage.setItem('nlabs_text_zoom', currentZoom.toString());
@@ -181,13 +171,11 @@
     }
   }
 
-
   // ==========================================================================
   // MODULE 3: ACCESSIBLE EXPANDABLE UI (MENU & PROFILE DRAWER)
   // ==========================================================================
 
   function initAccessibleExpandables() {
-    // 1. Expandable Main Navigation Menu
     const menuToggleBtn = document.getElementById('menu-toggle-btn');
     const globalMenu = document.getElementById('global-dropdown-menu');
 
@@ -206,7 +194,6 @@
         }
       });
 
-      // Close on Escape Key
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && menuToggleBtn.getAttribute('aria-expanded') === 'true') {
           menuToggleBtn.setAttribute('aria-expanded', 'false');
@@ -217,7 +204,6 @@
       });
     }
 
-    // 2. Expandable Founder Profile Drawer
     const profileToggleBtn = document.getElementById('btn-profile-drawer');
     const profileDrawer = document.getElementById('founder-profile-drawer');
     const toggleText = document.getElementById('drawer-toggle-text');
@@ -230,15 +216,14 @@
 
         if (toggleText) {
           toggleText.innerHTML = isExpanded 
-            ? 'Show Founder & Leadership Profile &darr;' 
-            : 'Hide Founder & Leadership Profile &uarr;';
+            ? 'Show Leadership Synopsis &darr;' 
+            : 'Hide Leadership Synopsis &uarr;';
         }
 
-        logTelemetryAction(isExpanded ? 'Collapsed Founder Profile' : 'Expanded Founder Profile');
+        logTelemetryAction(isExpanded ? 'Collapsed Leadership Synopsis' : 'Expanded Leadership Synopsis');
       });
     }
 
-    // 3. Floating Go-To-Top Button
     const btnGoTop = document.getElementById('btn-go-top');
     const siteHeading = document.getElementById('site-heading');
 
@@ -262,7 +247,6 @@
     }
   }
 
-
   // ==========================================================================
   // MODULE 4: UNIVERSAL SITE SEARCH ENGINE
   // ==========================================================================
@@ -270,13 +254,13 @@
   const siteSearchIndex = [
     { title: "Home Page", url: "index.html", tags: "home portal n-labs nitesh inclusion labs overview founder welcome" },
     { title: "About N-Labs & Founder Story", url: "about.html", tags: "about nitesh kumar story vision mission lived experience patna bihar" },
-    { title: "5 Enterprise Services", url: "services.html", tags: "services audits vpat acr remediation training pdf ua document user testing" },
+    { title: "Core Enterprise Services", url: "services.html", tags: "services audits vpat acr remediation training pdf ua document user testing" },
     { title: "Course 1: Complete HTML5, WAI-ARIA & Web Basics (₹99)", url: "courses.html#course-web-dev", tags: "courses html aria css javascript basic 99 rupees hindi google meet" },
     { title: "Course 2: Accessibility Tester & Auditor Masterclass (₹299)", url: "courses.html#course-a11y-auditor", tags: "courses auditing tester qa wcag nvda talkback jira vpat 299 rupees" },
-    { title: "Interactive Audit Engines", url: "tools.html", tags: "tools engines audit inspect contrast validator url html document scanner" },
+    { title: "Audit Engines & Tools", url: "tools.html", tags: "tools engines audit inspect contrast validator url html document scanner" },
     { title: "Articles & Knowledge Base", url: "articles.html", tags: "articles blog wcag bug reports jira manual audits pdf ua aria rules" },
     { title: "Course Registration Portal", url: "register.html", tags: "register enroll student course admission form 99 299 google meet" },
-    { title: "Contact, Inquiries & Feedback", url: "contact.html", tags: "contact phone email address location masaurhi patna feedback suggestion" },
+    { title: "Contact, Inquiries & Feedback", url: "contact.html", tags: "contact email address location masaurhi patna feedback suggestion" },
     { title: "Client Sign Up & Login", url: "auth.html", tags: "auth login sign up register client access portal password account" },
     { title: "Frequently Asked Questions (FAQ)", url: "faq.html", tags: "faq questions answers audit timeline legal pricing support" },
     { title: "Privacy Policy", url: "privacy.html", tags: "privacy policy data local storage security terms" },
@@ -302,13 +286,13 @@
     container.innerHTML = '';
 
     if (matches.length === 0) {
-      container.innerHTML = `<p>No matching resources found for <strong>"${escapeHTML(query)}"</strong>. Try broader keywords like <em>audit, course, tools,</em> or <em>contact</em>.</p>`;
+      container.innerHTML = `<p>No matching resources found for <strong>"${escapeHTML(query)}"</strong>. Try keywords like <em>audit, courses, services,</em> or <em>tools</em>.</p>`;
     } else {
       const list = document.createElement('ul');
-      list.className = 'search-results-list';
+      list.className = 'clean-bullet-list';
       matches.forEach(item => {
         const li = document.createElement('li');
-        li.innerHTML = `<a href="${item.url}" class="search-result-link"><strong>${escapeHTML(item.title)}</strong></a>`;
+        li.innerHTML = `<a href="${item.url}" class="btn-read-more"><strong>${escapeHTML(item.title)}</strong></a>`;
         list.appendChild(li);
       });
       container.appendChild(list);
@@ -319,12 +303,10 @@
     logTelemetryAction(`Executed Universal Search for: "${query}" (${matches.length} results)`);
   };
 
-
   // ==========================================================================
   // MODULE 5: 5 WORKING CLIENT-SIDE ACCESSIBILITY AUDIT ENGINES
   // ==========================================================================
 
-  // Engine 1: Live Web URL Conformance Scanner
   window.auditLiveURL = function () {
     const input = document.getElementById('tool-url-input');
     const output = document.getElementById('url-audit-output');
@@ -342,7 +324,7 @@
 `===================================================================
 N-LABS AUTOMATED URL CONFORMANCE DISCOVERY REPORT
 Target URL: ${targetUrl}
-Lead Auditor: Nitesh Kumar (N-Labs Directorate)
+Directorate: Nitesh Kumar (Founder, CEO & Director)
 Timestamp: ${timestamp}
 Standard: W3C WCAG 2.1 / 2.2 Level AA & Section 508
 ===================================================================
@@ -356,15 +338,14 @@ Standard: W3C WCAG 2.1 / 2.2 Level AA & Section 508
 
 [DIRECT REMEDIATION DIRECTIVES]:
 - Inject top-level bypass link: <a href="#main" class="skip-link">Skip to Content</a>
-- Add aria-label or screen-reader text inside icon-only interactive controls.
+- Add aria-label or accessible text inside icon-only interactive controls.
 - Re-align heading tags strictly sequentially (H1 -> H2 -> H3).
 
 STATUS: Local audit completed. Verified without external telemetry leak.`;
       logTelemetryAction(`Ran Live URL Audit on: ${targetUrl}`);
-    }, 900);
+    }, 800);
   };
 
-  // Engine 2: Raw HTML Web Component Inspector
   window.auditHTMLSnippet = function () {
     const input = document.getElementById('tool-html-input');
     const output = document.getElementById('html-audit-output');
@@ -397,7 +378,6 @@ STATUS: Local audit completed. Verified without external telemetry leak.`;
     logTelemetryAction(`Inspected HTML Code Snippet (${issues.length} defects identified)`);
   };
 
-  // Engine 3: Document Remediation Structure Auditor
   window.auditDocumentStructure = function () {
     const input = document.getElementById('tool-doc-input');
     const output = document.getElementById('doc-audit-output');
@@ -418,14 +398,13 @@ Heading Markers Detected: ${hasHeadings ? 'Yes (Structural markers present)' : '
 Data Table References: ${hasTables ? 'Detected (Requires explicit scope="col/row")' : 'None detected'}
 
 PDF/UA & OFFICE REMEDIATION CHECKLIST:
-1. Ensure all H1-H4 heading tags reflect visual section importance without level skipping.
+1. Ensure all H1-H4 heading tags reflect visual section hierarchy without level skipping.
 2. Convert pseudo-tables into real tagged tables with designated header cells (<TH>).
 3. Verify logical reading order using Screen Reader Read-All command (NVDA + Down Arrow).`;
 
     logTelemetryAction(`Audited Document Structure (${words} words analyzed)`);
   };
 
-  // Engine 4: Deque Standards Color Contrast Ratio Verifier
   window.calculateContrastRatio = function () {
     const fgInput = document.getElementById('tool-fg-color');
     const bgInput = document.getElementById('tool-bg-color');
@@ -474,7 +453,6 @@ Calculated Contrast Ratio: ${ratio}:1
     logTelemetryAction(`Evaluated Color Contrast: ${fgHex} vs ${bgHex} (${ratio}:1)`);
   };
 
-  // Engine 5: WAI-ARIA Landmark Validator
   window.validateCurrentLandmarks = function () {
     const output = document.getElementById('landmark-audit-output');
     if (!output) return;
@@ -490,7 +468,7 @@ Calculated Contrast Ratio: ${ratio}:1
 
     const results = required.map(req => {
       const el = document.querySelector(req.tag);
-      return `${el ? '[PASS]' : '[FAIL]'} ${req.name} Landmark: ${el ? 'Present and programmatically accessible.' : 'Missing in current DOM.'}`;
+      return `${el ? '[PASS]' : '[FAIL]'} ${req.name} Landmark: ${el ? 'Present and programmatically accessible.' : 'Missing in active DOM.'}`;
     });
 
     output.textContent = 
@@ -499,11 +477,10 @@ Verified Standards: WAI-ARIA 1.2 & WCAG 2.4.1
 
 ${results.join('\n')}
 
-All content regions are mapped to standard assistive navigation trees.`;
+Core landmark hierarchy strictly aligned with W3C APG directives.`;
 
     logTelemetryAction('Validated System Landmark Architecture');
   };
-
 
   // ==========================================================================
   // MODULE 6: REAL-TIME AUDITING & VISITOR TELEMETRY ENGINE
@@ -512,11 +489,10 @@ All content regions are mapped to standard assistive navigation trees.`;
   let sessionSeconds = 0;
 
   function initVisitorTelemetry() {
-    // 1. Visit Count & Prior Timestamp
     let visitCount = parseInt(localStorage.getItem('nlabs_visit_counter') || '0', 10) + 1;
     localStorage.setItem('nlabs_visit_counter', visitCount.toString());
 
-    const priorTimestamp = localStorage.getItem('nlabs_last_access_time') || 'Initial Visit (No previous session)';
+    const priorTimestamp = localStorage.getItem('nlabs_last_access_time') || 'Initial Visit (No previous session recorded)';
     const currentTimestamp = new Date().toLocaleString('en-IN', {
       weekday: 'long',
       day: '2-digit',
@@ -536,7 +512,6 @@ All content regions are mapped to standard assistive navigation trees.`;
     const deviceEl = document.getElementById('telemetry-device');
     const locationEl = document.getElementById('telemetry-location');
 
-    // Authenticated User Check (Session/Local storage based)
     const authenticatedClient = localStorage.getItem('nlabs_auth_client_name');
     if (userEl) {
       userEl.textContent = authenticatedClient ? authenticatedClient : 'Guest Visitor (Unauthenticated)';
@@ -554,7 +529,6 @@ All content regions are mapped to standard assistive navigation trees.`;
       currentEl.textContent = `${currentTimestamp} IST`;
     }
 
-    // 2. Client Device Architecture & Resolution
     if (deviceEl) {
       const userAgent = navigator.userAgent;
       let os = 'Unknown OS';
@@ -572,7 +546,6 @@ All content regions are mapped to standard assistive navigation trees.`;
       locationEl.textContent = 'Patna Node, Bihar, India (Resolved Gateway)';
     }
 
-    // 3. Active Running Session Duration Timer
     const durationEl = document.getElementById('telemetry-session-duration');
     setInterval(function () {
       sessionSeconds++;
@@ -604,11 +577,6 @@ All content regions are mapped to standard assistive navigation trees.`;
     }
   }
 
-
-  // ==========================================================================
-  // UTILITY HELPERS
-  // ==========================================================================
-
   function escapeHTML(str) {
     return str.replace(/[&<>'"]/g, 
       tag => ({
@@ -620,7 +588,6 @@ All content regions are mapped to standard assistive navigation trees.`;
       }[tag] || tag)
     );
   }
-
 
   // ==========================================================================
   // INITIALIZATION ON DOM READY
