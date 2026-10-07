@@ -1,399 +1,484 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="hi" dir="ltr">
 <head>
-  <!-- =====================================================================
-       FILE METADATA & ENTERPRISE SEO DIRECTIVES
-       Entity: Nitesh Inclusion Labs (N-Labs)
-       Founder: Nitesh Kumar
-       Deployment Standard: W3C WCAG 2.2 (Level AAA) & WAI-ARIA 1.2
-       Timestamp: Tuesday, October 6, 2026 - 09:28:02 PM IST
-       ===================================================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Nitesh Inclusion Labs (N-Labs) - Enterprise Digital Accessibility</title>
-  
-  <meta name="description" content="Official home portal of Nitesh Inclusion Labs (N-Labs), founded by Nitesh Kumar. Providing enterprise digital accessibility audits, document remediation, WCAG compliance training, and professional certification prep.">
-  <meta name="keywords" content="Nitesh Inclusion Labs, N-Labs, Nitesh Kumar, Accessibility Specialist, Screen Reader Auditor, NVDA Expert, CPACC, DADCA, ADS, WCAG 2.2 AAA, Digital Inclusion India, Patna Bihar">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>N-Labs | Nitesh Inclusion Labs - Universal Digital Accessibility Hub</title>
+  <meta name="description" content="Nitesh Inclusion Labs (N-Labs) - WCAG 2.2 AAA & ARIA 1.2 Compliant Digital Accessibility Consulting, Testing, Audits, Courses, and Research Hub led by Nitesh Kumar.">
   <meta name="author" content="Nitesh Kumar">
-  <meta name="robots" content="index, follow">
-
-  <!-- External Unified Stylesheet (Separate CSS File Architecture) -->
-  <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Digital Accessibility, WCAG 2.2, ARIA 1.2, CPACC, ADS, NVDA, Screen Reader, Web Accessibility, N-Labs, Nitesh Kumar">
+  <link rel="canonical" href="https://n-labs.org/index.html">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-  <!-- =====================================================================
-       SECTION 1: ACCESSIBLE SKIP LINKS (WCAG 2.4.1 BYPASS BLOCKS)
-       Purpose: Provides screen readers and keyboard-only users rapid shortcuts 
-       to bypass repeated navigation blocks directly to essential landmarks.
-       ===================================================================== -->
-  <nav class="skip-links-region" aria-label="Skip to page sections">
-    <a href="#main-content" class="skip-link">Skip to Main Content Landmark</a>
-    <a href="#global-navigation" class="skip-link">Skip to Primary Navigation Menu</a>
-    <a href="#universal-search" class="skip-link">Skip to Site-Wide Search Engine</a>
-    <a href="#courses-highlight" class="skip-link">Skip to Featured Training Courses</a>
-    <a href="#analytics-sidebar" class="skip-link">Skip to Visitor Analytics & Telemetry</a>
-    <a href="#footer-contentinfo" class="skip-link">Skip to Footer Contentinfo</a>
+  <!-- ========================================== -->
+  <!-- 1. ACCESSIBILITY SKIP LINKS (WCAG 2.4.1)  -->
+  <!-- ========================================== -->
+  <nav class="skip-links-region" aria-label="त्वरित नेविगेशन लिंक (Skip Links)">
+    <a href="#main-content" class="skip-link">मुख्य सामग्री पर जाएं (Skip to Main Content)</a>
+    <a href="#primary-nav" class="skip-link">मुख्य नेविगेशन मेन्यू पर जाएं (Skip to Navigation)</a>
+    <a href="#latest-updates-section" class="skip-link">नवीनतम अपडेट सेक्शन पर जाएं (Skip to Latest Updates)</a>
+    <a href="#telemetry-dashboard" class="skip-link">विजिटर एनालिटिक्स पर जाएं (Skip to Visitor Analytics)</a>
+    <a href="#colophon-footer" class="skip-link">वेबसाइट फुटर पर जाएं (Skip to Footer)</a>
   </nav>
-  <!-- END SECTION 1: SKIP LINKS -->
 
-  <!-- =====================================================================
-       SECTION 2: ENVIRONMENTAL TELEMETRY RIBBON
-       Purpose: Displays real-time date, time, weather, and rotating quotes.
-       Accessibility Note: aria-live is strictly OFF to prevent screen reader 
-       interruption; tabindex="0" allows deliberate manual inspection.
-       ===================================================================== -->
-  <div class="telemetry-ribbon" role="region" aria-label="Environmental System Status">
-    <div class="container ribbon-flex">
-      <div class="ribbon-item">
-        <span id="live-greeting" style="font-weight:bold;">Welcome to N-Labs</span> |
-        <span id="live-clock" tabindex="0">Tuesday, October 6, 2026 - 09:28:02 PM IST</span>
+  <!-- ========================================== -->
+  <!-- 2. REAL-TIME TELEMETRY & SYSTEM STATUS BAR -->
+  <!-- ========================================== -->
+  <aside class="system-status-bar" aria-label="सिस्टम समय, मौसम और स्थान लाइव सूचना पट्टी">
+    <div class="container status-bar-inner">
+      <div class="welcome-box" aria-live="polite">
+        <span class="status-icon" aria-hidden="true">👋</span>
+        <strong id="dynamic-greeting">शुभ दिन!</strong>
+        <span class="portal-tagline">N-Labs (Nitesh Inclusion Labs) में आपका स्वागत है</span>
       </div>
-      <div class="ribbon-item">
-        <span id="live-weather" tabindex="0">Patna: 28°C | Clear & Dry | AQI: 115 (Moderate)</span>
-      </div>
-      <div class="ribbon-item" aria-hidden="true">
-        <span>Quote: </span>
-        <span id="dynamic-quote" class="quote-text">Universal design makes independence a reality.</span>
+
+      <div class="telemetry-widgets">
+        <!-- Live System Clock -->
+        <div class="widget-block" id="system-clock-widget" aria-label="वर्तमान समय और दिनांक" aria-live="off">
+          <span class="widget-icon" aria-hidden="true">⏱️</span>
+          <span class="visually-hidden">वर्तमान दिनांक और समय: </span>
+          <span id="live-date-display" class="tabular-nums">बुधवार, 07 अक्टूबर 2026</span>
+          <span class="separator" aria-hidden="true">|</span>
+          <span id="live-clock-display" class="tabular-nums">13:29:40 IST</span>
+        </div>
+
+        <!-- Geo & Weather -->
+        <div class="widget-block" id="weather-location-widget" aria-label="लाइव स्थान और मौसम">
+          <span class="widget-icon" aria-hidden="true">📍</span>
+          <span id="live-location">पटना, बिहार, भारत</span>
+          <span class="separator" aria-hidden="true">|</span>
+          <span class="widget-icon" aria-hidden="true">🌤️</span>
+          <span id="live-weather">29°C धूप / साफ़</span>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- END SECTION 2: TELEMETRY RIBBON -->
+  </aside>
 
-  <!-- =====================================================================
-       SECTION 3: CROSS-DISABILITY ACCESSIBILITY TOOLBAR
-       Purpose: Independent display controls for Low Vision, Dyslexia, and Motor Needs.
-       ===================================================================== -->
-  <section class="a11y-toolbar-region" role="region" aria-label="Universal Accessibility Controls">
-    <div class="container a11y-toolbar-flex">
-      <span class="toolbar-title" id="toolbar-heading">Display & Reading Customization:</span>
-      <div class="toolbar-buttons" role="group" aria-labelledby="toolbar-heading">
-        <button type="button" id="btn-contrast" class="tool-btn" aria-pressed="false">High Contrast Theme</button>
-        <button type="button" id="btn-dyslexic" class="tool-btn" aria-pressed="false">Dyslexic Typography</button>
-        <button type="button" id="btn-text-inc" class="tool-btn" aria-label="Increase Text Scale">Font +</button>
-        <button type="button" id="btn-text-dec" class="tool-btn" aria-label="Decrease Text Scale">Font -</button>
-        <button type="button" id="btn-reset-pref" class="tool-btn" aria-label="Reset Display Options">Reset Defaults</button>
+  <!-- ========================================== -->
+  <!-- 3. PRIMARY SITE HEADER & NAVIGATION        -->
+  <!-- ========================================== -->
+  <header class="primary-header" role="banner">
+    <div class="container header-container">
+      <div class="brand-identity">
+        <a href="index.html" class="brand-link" aria-label="N-Labs - Nitesh Inclusion Labs होमपेज">
+          <span class="brand-short" translate="no">N-Labs</span>
+          <span class="brand-full">Nitesh Inclusion Labs</span>
+        </a>
+        <p class="brand-motto">सशक्त समावेशन, सुगम डिजिटल भारत (Pioneering Digital Inclusion)</p>
       </div>
-    </div>
-  </section>
-  <!-- END SECTION 3: ACCESSIBILITY TOOLBAR -->
 
-  <!-- =====================================================================
-       SECTION 4: HEADER LANDMARK (ROLE="BANNER")
-       Purpose: Top-level corporate branding, founder designation, and navigation jump.
-       ===================================================================== -->
-  <header role="banner" class="site-header">
-    <div class="container header-flex">
-      <div class="branding-block">
-        <h1 id="site-heading" tabindex="-1">Nitesh Inclusion Labs <span class="brand-monogram">(N-Labs)</span></h1>
-        <p class="tagline">Founded by Nitesh Kumar | Non-Visual Accessibility Specialist, Technical Auditor & Inclusion Engineer</p>
-      </div>
-      <div class="header-actions">
-        <button type="button" class="btn-jump" id="btn-go-bottom" aria-label="Jump directly to page footer">
-          Go to Bottom &darr;
+      <!-- Quick Accessibility Preferences -->
+      <div class="quick-a11y-controls" aria-label="त्वरित सुगमता नियंत्रण (Accessibility Toggles)">
+        <button type="button" id="toggle-contrast-btn" class="a11y-btn" aria-pressed="false" aria-label="उच्च कंट्रास्ट मोड टॉगल करें (High Contrast Mode)">
+          <span aria-hidden="true">🌓</span> उच्च कंट्रास्ट
+        </button>
+        <button type="button" id="toggle-font-btn" class="a11y-btn" aria-pressed="false" aria-label="टेक्स्ट आकार टॉगल करें (Toggle Text Scale)">
+          <span aria-hidden="true">🔍</span> बड़ा टेक्स्ट
         </button>
       </div>
     </div>
+
+    <!-- Main Navigation Bar -->
+    <nav id="primary-nav" class="main-navigation" aria-label="मुख्य वेबसाइट मेन्यू" role="navigation">
+      <div class="container nav-container">
+        <button type="button" class="mobile-nav-toggle" aria-controls="primary-menu-list" aria-expanded="false" aria-label="नेविगेशन मेन्यू खोलें या बंद करें">
+          <span class="hamburger-box" aria-hidden="true">
+            <span class="hamburger-inner"></span>
+          </span>
+          <span class="nav-toggle-text">मेन्यू</span>
+        </button>
+
+        <ul id="primary-menu-list" class="nav-menu-list">
+          <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">होम (Home)</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">परिचय (About)</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">सेवाएं (Services)</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link">कोर्सेस (Courses)</a></li>
+          <li class="nav-item"><a href="tools.html" class="nav-link">उपकरण (Tools)</a></li>
+          <li class="nav-item"><a href="blogs.html" class="nav-link">आर्टिकल्स (Articles)</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">प्रश्नोत्तरी (FAQ)</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">संपर्क एवं सुझाव (Contact)</a></li>
+          <li class="nav-item auth-item"><a href="auth.html" class="nav-link btn-auth-nav">लॉगिन / साइन अप</a></li>
+        </ul>
+
+        <!-- Universal In-Page Search Engine -->
+        <div class="nav-search-wrapper" role="search">
+          <form id="global-search-form" class="site-search-form" action="search.html" method="get">
+            <label for="global-search-input" class="visually-hidden">N-Labs संपूर्ण पोर्टल में खोजें</label>
+            <div class="search-input-group">
+              <input type="search" id="global-search-input" name="q" placeholder="पोर्टल, कोर्स या टूल खोजें..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+              <button type="submit" id="search-submit-btn" aria-label="खोज निष्पादित करें">
+                <span aria-hidden="true">🔍</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
   </header>
-  <!-- END SECTION 4: HEADER LANDMARK -->
 
-  <!-- =====================================================================
-       SECTION 5: PRIMARY NAVIGATION & SEARCH LANDMARKS
-       Purpose: Multi-page global directory links and universal keyword search engine.
-       ===================================================================== -->
-  <div class="navigation-search-bar">
-    <div class="container nav-search-flex">
-      
-      <!-- Primary Navigation Landmark -->
-      <nav id="global-navigation" role="navigation" aria-label="Primary Portal Directory">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-          <li><a href="about.html" class="nav-link">About N-Labs</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="courses.html" class="nav-link">Courses</a></li>
-          <li><a href="tools.html" class="nav-link">Audit Engines</a></li>
-          <li><a href="articles.html" class="nav-link">Articles</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-          <li><a href="auth.html" class="nav-link">Sign Up / Login</a></li>
-          <li><a href="sitemap.html" class="nav-link">Sitemap</a></li>
-        </ul>
-      </nav>
-
-      <!-- Universal Search Landmark -->
-      <form id="universal-search" role="search" aria-label="Universal Site Search Engine" class="search-form" onsubmit="event.preventDefault(); window.executeGlobalSearch();">
-        <label for="search-input" class="sr-only">Search pages, services, courses, articles, and tools:</label>
-        <input type="search" id="search-input" name="q" placeholder="Search keywords..." required autocomplete="off">
-        <button type="submit" class="btn-search">Search</button>
-      </form>
-
-    </div>
-  </div>
-  <!-- END SECTION 5: NAVIGATION & SEARCH -->
-
-  <!-- =====================================================================
-       SECTION 6: TWO-COLUMN MAIN CONTAINER (MAIN + COMPLEMENTARY SIDEBAR)
-       ===================================================================== -->
-  <div class="container page-layout">
-
-    <!-- ===================================================================
-         MAIN LANDMARK (ROLE="MAIN")
-         =================================================================== -->
-    <main id="main-content" role="main">
-
-      <!-- BLOCK A: EXECUTIVE PROFILE & FOUNDATIONAL MISSION -->
-      <section class="card" aria-labelledby="heading-executive">
-        <h2 id="heading-executive">Executive Mission & Platform Mandate</h2>
-        <p>
-          Welcome to the primary digital architecture of <strong>Nitesh Inclusion Labs (N-Labs)</strong>, 
-          an international digital accessibility testing and technical research consultancy founded and engineered by <strong>Nitesh Kumar</strong>. 
-          Operating with total visual impairment, Nitesh unites daily assistive device reliance (NVDA, JAWS, TalkBack, Braille displays) 
-          with global compliance frameworks to engineer barrier-free digital environments.
-        </p>
-        <p>
-          N-Labs audits, remediates, and certifies enterprise software, government portals, and educational ecosystems 
-          in strict conformance with <strong>W3C WCAG 2.0, 2.1, and 2.2 Levels A, AA, and AAA</strong>, Section 508 of the US Rehabilitation Act, 
-          the European Accessibility Act (EN 301 549), and India’s GIGW directives.
-        </p>
-      </section>
-
-      <!-- BLOCK B: SYNTHESIZED PROFESSIONAL ACCREDITATION MATRIX -->
-      <section class="card" aria-labelledby="heading-credentials">
-        <h2 id="heading-credentials">Synthesized Professional Accreditation Framework</h2>
-        <p>
-          Every audit engine, remediation blueprint, and training syllabus at N-Labs is directly grounded in five recognized qualifications:
-        </p>
-
-        <div class="table-responsive">
-          <table>
-            <caption>Consolidated Multi-Tier Accreditation and Technical Specializations</caption>
-            <thead>
-              <tr>
-                <th scope="col">Accreditation Title</th>
-                <th scope="col">Issuing Authority</th>
-                <th scope="col">Core Technical Domain</th>
-                <th scope="col">Direct Implementation at N-Labs</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Career Edge IT (94% Distinction)</th>
-                <td>NIIT Foundation</td>
-                <td>Data Structures, Formatting & Information Architectures</td>
-                <td>Rigorous semantic table models, document flow, and clean code documentation.</td>
-              </tr>
-              <tr>
-                <th scope="row">DADCA (Assistive Devices in Computer Applications)</th>
-                <td>National Association for the Blind (NAB) Delhi</td>
-                <td>NVDA Telemetry, Keyboard Traps, Non-Visual QA & Device Accommodations</td>
-                <td>Full manual screen reader testing, focus order tracking, and non-visual user flow auditing.</td>
-              </tr>
-              <tr>
-                <th scope="row">IAAP CPACC Prep 3.0 (5.0 IAAP ECs)</th>
-                <td>Deque University</td>
-                <td>Disability Models, Universal Design & International Mandates</td>
-                <td>Enterprise compliance management, strategic accessibility roadmaps, and policy design.</td>
-              </tr>
-              <tr>
-                <th scope="row">Accessibility Fundamentals (1.5 IAAP ECs)</th>
-                <td>Deque University</td>
-                <td>W3C POUR Standards (Perceivable, Operable, Understandable, Robust)</td>
-                <td>Systematic barrier eradication across visual, auditory, physical, cognitive, and motor vectors.</td>
-              </tr>
-              <tr>
-                <th scope="row">Accessible Document Specialist (ADS Domain)</th>
-                <td>Document Remediation Frameworks</td>
-                <td>PDF/UA (ISO 14289), Reading Trees & Structured Word/Excel Data</td>
-                <td>Complex PDF tagging, table header associations, reading order fixes, and accessible form controls.</td>
-              </tr>
-            </tbody>
-          </table>
+  <!-- ========================================== -->
+  <!-- 4. MAIN CONTENT LANDMARK (WCAG 1.3.1, 2.4.1)-->
+  <!-- ========================================== -->
+  <main id="main-content" class="main-layout" tabindex="-1">
+    
+    <!-- Hero / Banner Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="badge-pill">IAAP &amp; WCAG 2.2 AAA अनुपालित संस्थान</span>
+          <h1 id="hero-heading" class="hero-title">
+            डिजिटल समावेशन का नया आयाम: प्रत्येक व्यक्ति और तकनीक के लिए सुगम इंटरनेट
+          </h1>
+          <p class="hero-lead">
+            <strong>N-Labs (Nitesh Inclusion Labs)</strong> में हम डिजिटल दुनिया से सभी तकनीकी बाधाओं को समाप्त करने के लिए समर्पित हैं। WCAG 2.2, WAI-ARIA 1.2, CPACC सिद्धांतों और वास्तविक स्क्रीन रीडर (NVDA, TalkBack) परीक्षणों पर आधारित पेशेवर ऑडिटिंग, प्रशिक्षण और उपकरण।
+          </p>
+          <div class="hero-cta-group">
+            <a href="courses.html" class="btn btn-primary">प्रशिक्षण कोर्सेस देखें (Explore Courses)</a>
+            <a href="services.html" class="btn btn-secondary">ऑडिट सेवाएं (Enterprise Audits)</a>
+            <a href="tools.html" class="btn btn-outline">मुफ़्त एक्सेसिबिलिटी टूल्स</a>
+          </div>
         </div>
-      </section>
 
-      <!-- BLOCK C: FEATURED TRAINING COURSES (OFFICIAL ENROLLMENT GATEWAY) -->
-      <section id="courses-highlight" class="card" aria-labelledby="heading-courses">
-        <h2 id="heading-courses">Featured N-Labs Professional Certification Courses</h2>
-        <p>
-          Industry-focused, practical courses engineered by Nitesh Kumar. Learn foundational web architecture and enter the high-growth accessibility auditing industry:
-        </p>
-
-        <div class="courses-grid">
-          
-          <!-- Course 1 -->
-          <article class="course-card">
-            <div class="course-badge">Foundational Coding</div>
-            <h3>Course 1: Complete HTML5, WAI-ARIA & Accessible Web Basics</h3>
-            <p><strong>Curriculum:</strong> Complete HTML5 from basic to advanced, deep dive into WAI-ARIA 1.2 landmark roles and attributes, and practical basic CSS and basic JavaScript for accessible UI.</p>
-            <ul class="course-meta">
-              <li><strong>Duration:</strong> 6 Weeks (Self-Paced with Practical Exercises)</li>
-              <li><strong>Investment:</strong> <span class="price">₹99 Only</span></li>
-              <li><strong>Certification:</strong> Verified N-Labs Course Completion Certificate</li>
+        <div class="hero-card-summary" aria-label="संस्थापक का संक्षिप्त परिचय कार्ड">
+          <div class="founder-card-inner">
+            <div class="avatar-placeholder" aria-hidden="true">NK</div>
+            <h2 class="founder-name">नितेश कुमार (Nitesh Kumar)</h2>
+            <p class="founder-role">संस्थापक, निदेशक एवं लीड एक्सेसिबिलिटी ऑडिटर</p>
+            <ul class="founder-creds-list" aria-label="प्रमुख प्रमाणपत्र व योग्यताएं">
+              <li>🎓 <strong>डिप्लोमा इन DCA (NAB दिल्ली, आर.के. पुरम)</strong> — NVDA विशेषज्ञता</li>
+              <li>🏆 <strong>NIIT Foundation Career Edge IT प्रमाणन</strong> — 94% स्कोर</li>
+              <li>📜 <strong>IAAP CPACC, ADS &amp; Fundamentals</strong> मानक अध्ययन व अनुपालन</li>
+              <li>📍 <strong>कार्यक्षेत्र:</strong> मसौढ़ी, पटना, बिहार (संपूर्ण वैश्विक सेवाएं)</li>
             </ul>
-            <a href="courses.html#course-web-dev" class="btn-primary">View Syllabus & Register (₹99)</a>
-          </article>
-
-          <!-- Course 2 -->
-          <article class="course-card">
-            <div class="course-badge professional">Professional QA</div>
-            <h3>Course 2: Professional Digital Accessibility Tester & Auditor Masterclass</h3>
-            <p><strong>Curriculum:</strong> Complete training to become a professional accessibility auditor. Master WCAG 2.1/2.2 AA auditing, manual testing using NVDA and TalkBack, writing enterprise Jira bug reports, and VPAT evaluation.</p>
-            <ul class="course-meta">
-              <li><strong>Duration:</strong> 10 Weeks (Intensive Hands-On Auditing)</li>
-              <li><strong>Investment:</strong> <span class="price">₹299 Only</span></li>
-              <li><strong>Certification:</strong> Certified N-Labs Accessibility Auditor (NAA)</li>
-            </ul>
-            <a href="courses.html#course-a11y-auditor" class="btn-primary">View Syllabus & Register (₹299)</a>
-          </article>
-
+            <a href="about.html" class="card-inline-link">विस्तृत कहानी और विज़न पढ़ें &rarr;</a>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- BLOCK D: SYSTEM-WIDE FUNCTIONAL HUBS -->
-      <section class="card" aria-labelledby="heading-hubs">
-        <h2 id="heading-hubs">Explore the N-Labs Ecosystem</h2>
-        <p>Access our specialized platforms and service engines directly:</p>
-
-        <div class="hubs-grid">
-          
-          <article class="sub-card">
-            <h3><a href="services.html">Enterprise Services</a></h3>
-            <p>Comprehensive web & mobile audits, PDF/Word document remediation, developer code consulting, and corporate D&I workshops.</p>
-          </article>
-
-          <article class="sub-card">
-            <h3><a href="tools.html">Live Audit Engines</a></h3>
-            <p>Interactive web URL scanners, HTML snippet analyzers, document structure validators, and WCAG AA color contrast tools.</p>
-          </article>
-
-          <article class="sub-card">
-            <h3><a href="articles.html">Articles & Case Studies</a></h3>
-            <p>Technical publications on web accessibility laws, enterprise Jira defect reporting templates, and manual audit guidelines.</p>
-          </article>
-
-          <article class="sub-card">
-            <h3><a href="contact.html">Contact & Consultation</a></h3>
-            <p>Unified interface for audit commissions, feedback, corporate consultations, and direct phone/email reach.</p>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- BLOCK E: SEARCH RESULTS CONTAINER -->
-      <section id="search-results-panel" class="card" aria-labelledby="heading-search-results" style="display:none;">
-        <h2 id="heading-search-results">Universal Site Search Results</h2>
-        <div id="search-output" role="region" aria-live="polite">
-          <!-- Dynamically populated by script.js -->
-        </div>
-        <button type="button" class="btn-secondary" onclick="document.getElementById('search-results-panel').style.display='none';">Close Search Results</button>
-      </section>
-
-    </main>
-    <!-- END MAIN LANDMARK -->
-
-    <!-- ===================================================================
-         COMPLEMENTARY SIDEBAR LANDMARK (ROLE="COMPLEMENTARY")
-         Purpose: Live visitor tracking, device analytics, verified contact info.
-         =================================================================== -->
-    <aside id="analytics-sidebar" role="complementary" aria-label="Visitor Analytics and Verification Hub">
+    <!-- Content Layout Grid: Main Content + Aside Sidebar -->
+    <div class="container content-grid-layout">
       
-      <!-- SUB-BLOCK A: REAL-TIME AUDITING & VISITOR TELEMETRY MODULE -->
-      <section class="card" aria-labelledby="heading-telemetry">
-        <h3 id="heading-telemetry">Real-Time Access Telemetry</h3>
-        <p class="telemetry-intro">Live user session monitoring and environment analytics:</p>
+      <!-- Primary Main Column -->
+      <div class="primary-column">
         
-        <dl class="analytics-specs">
-          <dt><strong>User Identity:</strong></dt>
-          <dd id="telemetry-username">Guest Visitor (Unauthenticated)</dd>
+        <!-- Live Automated Latest Updates Section -->
+        <section id="latest-updates-section" class="content-section latest-section" aria-labelledby="latest-section-heading">
+          <div class="section-header-row">
+            <div>
+              <h2 id="latest-section-heading" class="section-heading">
+                <span class="live-dot" aria-hidden="true"></span>
+                नवीनतम प्लेटफॉर्म अपडेट्स और घोषणाएं (Latest Feeds)
+              </h2>
+              <p class="section-subtext">कोर्स, नए आर्टिकल्स, टूल्स और नीतिगत बदलावों का स्वचालित लाइव फ़ीड (बिना पेज रीफ्रेश किए अपडेटेड)</p>
+            </div>
+            <span class="feed-status-badge" aria-live="polite" id="feed-last-updated">अपडेट: 07 अक्टूबर 2026, 13:29 IST</span>
+          </div>
 
-          <dt><strong>Visit Frequency:</strong></dt>
-          <dd id="telemetry-visit-count">Calculating access frequency...</dd>
+          <div class="feed-filter-bar" role="toolbar" aria-label="फ़ीड श्रेणी फ़िल्टर">
+            <span class="filter-label">श्रेणी चुनें:</span>
+            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">सभी (All)</button>
+            <button type="button" class="filter-btn" data-filter="course" aria-pressed="false">कोर्सेस</button>
+            <button type="button" class="filter-btn" data-filter="article" aria-pressed="false">आर्टिकल्स</button>
+            <button type="button" class="filter-btn" data-filter="tool" aria-pressed="false">टूल्स</button>
+            <button type="button" class="filter-btn" data-filter="compliance" aria-pressed="false">नियामक</button>
+          </div>
 
-          <dt><strong>Prior Visit Timestamp:</strong></dt>
-          <dd id="telemetry-prior-date">Checking prior records...</dd>
+          <ul class="latest-feed-list" id="latest-feed-container" aria-live="polite" aria-relevant="additions text">
+            <!-- Feed Item 1 -->
+            <li class="feed-card" data-category="course">
+              <div class="feed-card-header">
+                <span class="badge badge-course">कोर्स अपडेट</span>
+                <time datetime="2026-10-07T10:00:00+05:30" class="feed-date">07 अक्टूबर 2026 | 10:00:00 AM IST</time>
+              </div>
+              <h3 class="feed-title">
+                <a href="courses.html#course-a11y-tester">डिजिटल एक्सेसिबिलिटी टेस्टर एवं ऑडिटर बैच (Google Meet)</a>
+              </h3>
+              <p class="feed-desc">
+                दृष्टिबाधित और सभी दिव्यांग जनों के लिए हिंदी माध्यम में व्यापक प्रशिक्षण। WCAG 2.2 के 86 क्राइटेरिया, NVDA स्क्रीन रीडर से व्यावहारिक परीक्षण एवं VPAT/ACR निर्माण का संपूर्ण पाठ्यक्रम उपलब्ध।
+              </p>
+              <div class="feed-card-footer">
+                <span class="meta-info">मोड: लाइव ऑनलाइन (Google Meet)</span>
+                <a href="courses.html#course-a11y-tester" class="read-more-link" aria-label="डिजिटल एक्सेसिबिलिटी टेस्टर बैच के बारे में और पढ़ें">पूरा पढ़ें (Read More) &rarr;</a>
+              </div>
+            </li>
 
-          <dt><strong>Session Active Duration:</strong></dt>
-          <dd id="telemetry-session-duration">0m 0s</dd>
+            <!-- Feed Item 2 -->
+            <li class="feed-card" data-category="article">
+              <div class="feed-card-header">
+                <span class="badge badge-article">नया आर्टिकल</span>
+                <time datetime="2026-10-06T15:30:00+05:30" class="feed-date">06 अक्टूबर 2026 | 03:30:00 PM IST</time>
+              </div>
+              <h3 class="feed-title">
+                <a href="blogs.html#article-wcag-22-breakdown">WCAG 2.2 के 9 नए क्राइटेरिया का विस्तृत तकनीकी विश्लेषण</a>
+              </h3>
+              <p class="feed-desc">
+                Focus Appearance, Target Size (Minimum), Redundant Entry और Accessible Authentication के वास्तविक कार्यान्वयन को कोड स्निपेट्स और परीक्षण विधियों के साथ विस्तार से समझें।
+              </p>
+              <div class="feed-card-footer">
+                <span class="meta-info">लेखक: नितेश कुमार | श्रेणी: WAI-ARIA &amp; WCAG</span>
+                <a href="blogs.html#article-wcag-22-breakdown" class="read-more-link" aria-label="WCAG 2.2 तकनीकी विश्लेषण आर्टिकल पढ़ें">पूरा पढ़ें (Read More) &rarr;</a>
+              </div>
+            </li>
 
-          <dt><strong>Client Device & OS:</strong></dt>
-          <dd id="telemetry-device">Detecting client architecture...</dd>
+            <!-- Feed Item 3 -->
+            <li class="feed-card" data-category="tool">
+              <div class="feed-card-header">
+                <span class="badge badge-tool">नया टूल रिलीज़</span>
+                <time datetime="2026-10-05T18:45:00+05:30" class="feed-date">05 अक्टूबर 2026 | 06:45:00 PM IST</time>
+              </div>
+              <h3 class="feed-title">
+                <a href="tools.html#contrast-engine">लाइव WCAG Level AAA कलर कंट्रास्ट कैलकुलेटर v2.0 लाइव हुआ</a>
+              </h3>
+              <p class="feed-desc">
+                WCAG 1.4.6 (कंट्रास्ट एन्हांस्ड 7:1) और 1.4.11 नॉन-टेक्स्ट कंट्रास्ट की सटीकता से जांच करने के लिए नया वास्तविक मैथमेटिकल रिलेटिव ल्यूमिनेन्स इंजन जोड़ा गया है।
+              </p>
+              <div class="feed-card-footer">
+                <span class="meta-info">उपकरण: 100% क्लाइंट-साइड एवं गोपनीयता सुरक्षित</span>
+                <a href="tools.html#contrast-engine" class="read-more-link" aria-label="कलर कंट्रास्ट कैलकुलेटर टूल खोलें">टूल का उपयोग करें (Try Tool) &rarr;</a>
+              </div>
+            </li>
 
-          <dt><strong>Network Geolocation Node:</strong></dt>
-          <dd id="telemetry-location">Patna Node / Resolving...</dd>
+            <!-- Feed Item 4 -->
+            <li class="feed-card" data-category="compliance">
+              <div class="feed-card-header">
+                <span class="badge badge-compliance">नियामक अनुपालन</span>
+                <time datetime="2026-10-04T09:15:00+05:30" class="feed-date">04 अक्टूबर 2026 | 09:15:00 AM IST</time>
+              </div>
+              <h3 class="feed-title">
+                <a href="services.html#service-vpat">RPwD Act 2016 एवं US Section 508 VPAT/ACR ऑडिटिंग सेवा</a>
+              </h3>
+              <p class="feed-desc">
+                कॉर्पोरेट और सरकारी उद्यमों के लिए वैश्विक कानूनी अनुपालन को आसान बनाने हेतु N-Labs की आधिकारिक ऑडिटिंग और कंसल्टिंग सेवाएं सक्रिय हैं।
+              </p>
+              <div class="feed-card-footer">
+                <span class="meta-info">मानक: ITI VPAT 2.5 Rev (WCAG &amp; 508)</span>
+                <a href="services.html#service-vpat" class="read-more-link" aria-label="VPAT और ACR ऑडिटिंग सेवाओं के बारे में पढ़ें">विस्तार से जानें (Explore Service) &rarr;</a>
+              </div>
+            </li>
+          </ul>
+        </section>
 
-          <dt><strong>Navigation Activity Log:</strong></dt>
-          <dd id="telemetry-last-action">Home Page Initialized</dd>
-        </dl>
-      </section>
+        <!-- Core Pillar Highlights (Services & Offerings) -->
+        <section class="content-section" aria-labelledby="pillars-heading">
+          <h2 id="pillars-heading" class="section-heading">N-Labs के 5 मुख्य स्तंभ (Core Pillars)</h2>
+          <p class="section-subtext">Deque University और IAAP (CPACC/ADS/Fundamentals) मानकों पर आधारित संपूर्ण कार्यप्रणाली</p>
 
-      <!-- SUB-BLOCK B: VERIFIED HEADQUARTERS & CONTACT REPOSITORY -->
-      <section class="card" aria-labelledby="heading-headquarters">
-        <h3 id="heading-headquarters">Verified Lab Headquarters</h3>
-        <p><strong>Organization:</strong> Nitesh Inclusion Labs (N-Labs)</p>
-        <p><strong>Principal Auditor:</strong> Nitesh Kumar</p>
-        <p><strong>Location:</strong> Patna (Danapur / Masaurhi), Bihar, India</p>
-        <p><strong>Direct Telephone:</strong> <a href="tel:+918434721287">+91 84347 21287</a></p>
-        <p><strong>Official Inbox:</strong> <a href="mailto:niteshkumar91845@gmail.com">niteshkumar91845@gmail.com</a></p>
-      </section>
+          <div class="card-grid-3">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🔍</div>
+              <h3>व्यापक एक्सेसिबिलिटी ऑडिट</h3>
+              <p>WCAG 2.2 Level A, AA और AAA के सभी 86 सफलता मानदंडों पर स्वचालित और गहन मैनुअल स्क्रीन रीडर ऑडिट।</p>
+              <a href="services.html" class="feature-link">सेवा विवरण &rarr;</a>
+            </article>
 
-      <!-- SUB-BLOCK C: AUDITED ASSISTIVE TECH MATRIX -->
-      <section class="card" aria-labelledby="heading-protocols">
-        <h3 id="heading-protocols">Supported Accessibility Protocols</h3>
-        <ul class="protocol-list">
-          <li><strong>Blindness & Vision:</strong> NVDA, JAWS, TalkBack, VoiceOver.</li>
-          <li><strong>Low Vision:</strong> High-contrast themes, 400% zoom reflow, clear focus indicators.</li>
-          <li><strong>Motor & Physical:</strong> Complete keyboard accessibility, zero traps, switch navigation.</li>
-          <li><strong>Hearing:</strong> 100% text-based communication, zero audio dependencies.</li>
-          <li><strong>Cognitive:</strong> Predictable layouts, plain language, dyslexic typography.</li>
-        </ul>
-      </section>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🎓</div>
+              <h3>प्रमाणित सुगमता कोर्सेस</h3>
+              <p>स्क्रीन रीडर उपयोगकर्ताओं और सामान्य छात्रों हेतु सुगम HTML, CSS, JavaScript, ARIA एवं ऑडिटिंग प्रशिक्षण।</p>
+              <a href="courses.html" class="feature-link">कोर्सेस देखें &rarr;</a>
+            </article>
 
-    </aside>
-    <!-- END COMPLEMENTARY SIDEBAR -->
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🛠️</div>
+              <h3>5 कार्यात्मक ऑडिट उपकरण</h3>
+              <p>कंट्रास्ट इंजन, हेडिंग स्ट्रक्चर पार्सर, टच टारगेट एनालाइज़र, ARIA चेकर और कीबोर्ड ट्रैप सैंडबॉक्स।</p>
+              <a href="tools.html" class="feature-link">टूल्स खोलें &rarr;</a>
+            </article>
+          </div>
+        </section>
 
-  </div>
-  <!-- END TWO-COLUMN CONTAINER -->
+      </div>
 
-  <!-- FLOATING GO TO TOP BUTTON -->
-  <button type="button" class="btn-floating-top" id="btn-go-top" aria-label="Return directly to top of page">
-    &uarr; Top
-  </button>
+      <!-- Secondary Column / Sidebar -->
+      <aside class="sidebar-column" aria-label="त्वरित संपर्क एवं प्रमाणन जानकारी">
+        
+        <!-- Founder Direct Profile Box -->
+        <div class="sidebar-widget founder-widget">
+          <h3 class="widget-title">संस्थापक से सीधा संपर्क</h3>
+          <p class="widget-desc">किसी भी परामर्श, ऑडिट अनुरोध या प्रशिक्षण संबंधी बातचीत के लिए बेझिझक संपर्क करें:</p>
+          <ul class="contact-details-list">
+            <li>
+              <span class="detail-label">📞 फोन:</span>
+              <a href="tel:+918434721287" class="contact-action-link" aria-label="कॉल करें: 8434721287">+91 84347 21287</a>
+            </li>
+            <li>
+              <span class="detail-label">✉️ ईमेल:</span>
+              <a href="mailto:niteshkumar91845@gmail.com" class="contact-action-link" aria-label="ईमेल भेजें: niteshkumar91845@gmail.com">niteshkumar91845@gmail.com</a>
+            </li>
+            <li>
+              <span class="detail-label">🏢 पता:</span>
+              <address class="office-address">
+                दिनकर नगर, दही भट्ठा, मसौढ़ी,<br>
+                पटना, बिहार - 804452, भारत
+              </address>
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary btn-block">पूछताछ व फीडबैक फॉर्म खोलें</a>
+        </div>
 
-  <!-- =====================================================================
-       SECTION 7: FOOTER LANDMARK (ROLE="CONTENTINFO")
-       Purpose: Global metadata, legal links, certification statements.
-       ===================================================================== -->
-  <footer id="footer-contentinfo" role="contentinfo">
-    <div class="container footer-flex">
+        <!-- Accreditations & Standards Widget -->
+        <div class="sidebar-widget standard-widget">
+          <h3 class="widget-title">मानक एवं अनुपालन आधार</h3>
+          <ul class="standards-checklist">
+            <li>✔️ <strong>WCAG 2.0, 2.1 &amp; 2.2</strong> (Level A, AA, AAA)</li>
+            <li>✔️ <strong>WAI-ARIA 1.2</strong> पूर्ण इंटरएक्टिव पैटर्न</li>
+            <li>✔️ <strong>IAAP CPACC, ADS &amp; Fundamentals</strong></li>
+            <li>✔️ <strong>Section 508 &amp; EN 301 549</strong></li>
+            <li>✔️ <strong>RPwD Act 2016 &amp; GIGW 3.0</strong></li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 5. REAL-TIME CLIENT TELEMETRY & ANALYTICS  -->
+    <!-- ========================================== -->
+    <section id="telemetry-dashboard" class="telemetry-section" aria-labelledby="telemetry-heading">
+      <div class="container">
+        <div class="telemetry-header">
+          <h2 id="telemetry-heading" class="section-heading">
+            पारदर्शी विज़िटर एनालिटिक्स व एक्टिविटी ट्रैकर (Visitor Activity Analytics)
+          </h2>
+          <p class="section-subtext">
+            WCAG एवं प्राइवेसी नियमों (DPDP Act / GDPR) के तहत, यह डेटा केवल आपके ब्राउज़र में लाइव सत्र मॉनिटरिंग के लिए स्थानीय स्तर पर प्रोसेस होता है।
+          </p>
+        </div>
+
+        <div class="telemetry-grid">
+          <!-- Visit Counts -->
+          <div class="telemetry-box" role="region" aria-label="विजिट संख्या सांख्यिकी">
+            <span class="telemetry-label">कुल विज़िट संख्या (Total Visits)</span>
+            <span class="telemetry-value tabular-nums" id="stat-total-visits">1</span>
+            <span class="telemetry-hint">आपके वर्तमान ब्राउज़र प्रोफाइल के अनुसार</span>
+          </div>
+
+          <!-- Session Duration -->
+          <div class="telemetry-box" role="region" aria-label="वर्तमान सत्र अवधि">
+            <span class="telemetry-label">सत्र अवधि (Session Duration)</span>
+            <span class="telemetry-value tabular-nums" id="stat-session-duration">00:00:00</span>
+            <span class="telemetry-hint">घंटे : मिनट : सेकंड (लाइव प्रगति)</span>
+          </div>
+
+          <!-- Last Visit Timestamp -->
+          <div class="telemetry-box" role="region" aria-label="पिछली विज़िट का समय">
+            <span class="telemetry-label">पिछली विज़िट (Previous Visit)</span>
+            <span class="telemetry-value tabular-nums" id="stat-last-visit">पहला विज़िट</span>
+            <span class="telemetry-hint">दिनांक, दिन, माह, वर्ष एवं समय</span>
+          </div>
+
+          <!-- Present Visit Timestamp -->
+          <div class="telemetry-box" role="region" aria-label="वर्तमान विज़िट का आरंभ समय">
+            <span class="telemetry-label">वर्तमान विज़िट (Current Session)</span>
+            <span class="telemetry-value tabular-nums" id="stat-current-visit">07 अक्टूबर 2026, 13:29:40 IST</span>
+            <span class="telemetry-hint">प्रवेश समय और टाइमज़ोन</span>
+          </div>
+
+          <!-- Device & System Specs -->
+          <div class="telemetry-box" role="region" aria-label="डिवाइस और ब्राउज़र जानकारी">
+            <span class="telemetry-label">डिवाइस एवं ऑपरेटिंग सिस्टम</span>
+            <span class="telemetry-value" id="stat-device-info">पहचान की जा रही है...</span>
+            <span class="telemetry-hint" id="stat-screen-resolution">स्क्रीन: -- x --</span>
+          </div>
+
+          <!-- Location & Origin -->
+          <div class="telemetry-box" role="region" aria-label="स्थान और नेटवर्क जानकारी">
+            <span class="telemetry-label">सत्र का अनुमानित स्थान</span>
+            <span class="telemetry-value" id="stat-network-location">पटना, बिहार, भारत</span>
+            <span class="telemetry-hint">क्लाइंट-साइड जियोलोकेशन अनुमति समर्थित</span>
+          </div>
+        </div>
+
+        <!-- Activity History Log -->
+        <div class="activity-log-card" role="region" aria-label="नेविगेशन और गतिविधि इतिहास">
+          <h3 class="activity-log-title">इस सत्र में आपकी हालिया गतिविधि (Navigation Trail):</h3>
+          <ul class="activity-history-list" id="activity-log-list" aria-live="polite">
+            <li>[13:29:40 IST] होमपेज (index.html) सफलतापूर्वक लोड हुआ और स्क्रीन रीडर हेतु तैयार है।</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 6. COLOPHON & FOOTER LANDMARK (WCAG 1.3.1) -->
+  <!-- ========================================== -->
+  <footer id="colophon-footer" class="primary-footer" role="contentinfo">
+    <div class="container footer-container">
       
-      <div class="footer-brand-info">
-        <p class="footer-title"><strong>Nitesh Inclusion Labs (N-Labs)</strong></p>
-        <p>&copy; 2026 Nitesh Kumar. All rights reserved.</p>
-        <p class="footer-compliance">
-          Engineered under the direct supervision of Nitesh Kumar in full conformance with W3C WAI-ARIA 1.2, WCAG 2.0/2.1/2.2 Levels A, AA, AAA, and Section 508.
+      <!-- Col 1: Brand & Identity -->
+      <div class="footer-col brand-col">
+        <h2 class="footer-brand-title">N-Labs</h2>
+        <p class="footer-full-name">Nitesh Inclusion Labs</p>
+        <p class="footer-desc">
+          दृष्टिबाधित और सभी दिव्यांग जनों को डिजिटल मुख्यधारा से जोड़ने और वेब को 100% सुगम बनाने हेतु समर्पित संस्था।
+        </p>
+        <p class="footer-leadership">
+          <strong>संस्थापक एवं निदेशक:</strong> नितेश कुमार (Nitesh Kumar)
         </p>
       </div>
 
-      <nav class="footer-navigation" aria-label="Footer Secondary Links">
-        <ul class="footer-links-grid">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About N-Labs</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="courses.html">Courses (₹99 & ₹299)</a></li>
-          <li><a href="tools.html">Audit Engines</a></li>
-          <li><a href="articles.html">Articles & Guides</a></li>
-          <li><a href="contact.html">Contact & Feedback</a></li>
-          <li><a href="auth.html">Sign Up / Login</a></li>
-          <li><a href="sitemap.html">Sitemap Index</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Use</a></li>
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-col links-col">
+        <h3 class="footer-heading">त्वरित लिंक्स</h3>
+        <ul class="footer-links-list">
+          <li><a href="about.html">संस्था एवं संस्थापक परिचय</a></li>
+          <li><a href="services.html">ऑडिट व कंसल्टेंसी सेवाएं</a></li>
+          <li><a href="courses.html">प्रशिक्षण कोर्सेस व शुल्क</a></li>
+          <li><a href="tools.html">मुफ़्त एक्सेसिबिलिटी टूल्स</a></li>
+          <li><a href="blogs.html">रिसर्च आर्टिकल्स व ब्लॉग</a></li>
+          <li><a href="faq.html">अक्सर पूछे जाने वाले प्रश्न (FAQ)</a></li>
         </ul>
-      </nav>
+      </div>
+
+      <!-- Col 3: Legal & Standards -->
+      <div class="footer-col legal-col">
+        <h3 class="footer-heading">कानूनी एवं अनुपालन</h3>
+        <ul class="footer-links-list">
+          <li><a href="privacy.html">गोपनीयता नीति (Privacy Policy)</a></li>
+          <li><a href="terms.html">उपयोग की शर्तें (Terms of Use)</a></li>
+          <li><a href="sitemap.html">वेबसाइट साइटमैप (Sitemap)</a></li>
+          <li><a href="register.html">कोर्स ऑनलाइन पंजीकरण</a></li>
+          <li><a href="auth.html">उपयोगकर्ता पोर्टल (Login/Signup)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Verified Contact -->
+      <div class="footer-col contact-col">
+        <h3 class="footer-heading">आधिकारिक संपर्क</h3>
+        <p class="footer-contact-line">
+          <strong>फोन:</strong> <a href="tel:+918434721287">+91 84347 21287</a>
+        </p>
+        <p class="footer-contact-line">
+          <strong>ईमेल:</strong> <a href="mailto:niteshkumar91845@gmail.com">niteshkumar91845@gmail.com</a>
+        </p>
+        <p class="footer-contact-line">
+          <strong>मुख्यालय:</strong> दिनकर नगर, दही भट्ठा, मसौढ़ी, पटना, बिहार - 804452
+        </p>
+      </div>
 
     </div>
-  </footer>
-  <!-- END FOOTER LANDMARK -->
 
-  <!-- External Unified Logic Script (Separate JS File Architecture) -->
-  <script src="script.js" defer></script>
+    <!-- Sub-footer bar with version and copyright -->
+    <div class="sub-footer-bar">
+      <div class="container sub-footer-inner">
+        <p class="copyright-text">
+          &copy; 2026 <strong>N-Labs (Nitesh Inclusion Labs)</strong>. सर्वाधिकार सुरक्षित। संस्थापक: नितेश कुमार।
+        </p>
+        <div class="platform-meta">
+          <span class="compliance-badge" title="Web Content Accessibility Guidelines 2.2 Level AAA">WCAG 2.2 AAA &amp; ARIA 1.2 Conformance</span>
+          <span class="separator" aria-hidden="true">|</span>
+          <span class="version-tag" id="platform-version-indicator">संस्करण: v2.4.0 (रिलीज़: 07 अक्टूबर 2026)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
