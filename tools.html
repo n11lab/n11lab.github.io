@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- =====================================================================
+       ENTERPRISE METADATA & ACCESSIBILITY DIRECTIVES
+       Entity: N-Labs (Nitesh Inclusion Labs)
+       Directorate: Nitesh Kumar (Founder, CEO & Director)
+       Compliance Standards: W3C WCAG 2.0/2.1/2.2 (Level AAA) & WAI-ARIA 1.2
+       Page Scope: Dedicated Interactive Accessibility Audit Engines
+       Timestamp: Wednesday, October 7, 2026 - IST
+       ===================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit Engines & Tools | N-Labs (Nitesh Inclusion Labs) - WCAG 2.2 Verifiers</title>
+  
+  <meta name="description" content="Dedicated suite of 5 interactive client-side accessibility audit engines engineered by Nitesh Kumar. Validate live URLs, inspect raw HTML, analyze document structures, test color contrast, and verify ARIA landmarks.">
+  <meta name="keywords" content="Accessibility Tools, WCAG 2.2 Auditor, Contrast Ratio Checker, HTML Inspector, Document Remediation Tool, ARIA Landmark Validator, N-Labs, Nitesh Kumar">
+  <meta name="author" content="Nitesh Kumar">
+  <meta name="robots" content="index, follow">
+
+  <!-- External Unified Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       1. ACCESSIBLE SKIP LINKS (WCAG 2.4.1 BYPASS BLOCKS)
+       ===================================================================== -->
+  <nav class="skip-links-region" aria-label="Skip links">
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+    <a href="#menu-toggle-btn" class="skip-link">Skip to Website Navigation</a>
+    <a href="#footer-landmark" class="skip-link">Skip to Footer</a>
+  </nav>
+
+  <!-- =====================================================================
+       2. TOP ENVIRONMENTAL TELEMETRY RIBBON
+       ===================================================================== -->
+  <div class="telemetry-ribbon" aria-label="Environmental live status">
+    <div class="container ribbon-grid">
+      <div class="ribbon-block">
+        <span id="live-greeting" class="ribbon-highlight">Good Afternoon | Welcome to N-Labs</span>
+        <span class="divider" aria-hidden="true">|</span>
+        <span id="live-clock" tabindex="0">05:02:58 PM</span>
+      </div>
+      <div class="ribbon-block">
+        <span id="live-date" tabindex="0">Wednesday, 07 October 2026</span>
+      </div>
+      <div class="ribbon-block">
+        <span id="live-location" tabindex="0">Patna, Bihar, India</span>
+        <span class="divider" aria-hidden="true">|</span>
+        <span id="live-weather" tabindex="0">29°C | Clear | AQI: 118</span>
+      </div>
+      <div class="ribbon-block ribbon-quote-box" aria-hidden="true">
+        <span class="quote-title">Thought: </span>
+        <span id="dynamic-quote" class="quote-text">Universal design makes independence an unconditional reality.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       3. CROSS-DISABILITY ACCESSIBILITY DISPLAY CONTROLS
+       ===================================================================== -->
+  <div class="a11y-toolbar-region">
+    <div class="container a11y-toolbar-flex">
+      <span class="toolbar-title" id="toolbar-heading">Accessibility Aids:</span>
+      <div class="toolbar-buttons" role="group" aria-labelledby="toolbar-heading">
+        <button type="button" id="btn-contrast" class="tool-btn" aria-pressed="false">High Contrast</button>
+        <button type="button" id="btn-dyslexic" class="tool-btn" aria-pressed="false">Dyslexic Font</button>
+        <button type="button" id="btn-text-inc" class="tool-btn" aria-label="Increase text size">Font +</button>
+        <button type="button" id="btn-text-dec" class="tool-btn" aria-label="Decrease text size">Font -</button>
+        <button type="button" id="btn-reset-pref" class="tool-btn" aria-label="Reset display preferences">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       4. HEADER LANDMARK (ROLE="BANNER")
+       ===================================================================== -->
+  <header role="banner" class="site-header">
+    <div class="container header-flex">
+      
+      <!-- Brand & Leadership Summary -->
+      <div class="branding-group">
+        <h1 id="site-heading">
+          <span class="brand-title">N-Labs</span> 
+          <span class="brand-subtitle">(Nitesh Inclusion Labs)</span>
+        </h1>
+        <p class="brand-tagline">Client-Side Digital Accessibility Verification & Conformance Testing Engines</p>
+        
+        <button type="button" id="btn-profile-drawer" class="btn-drawer-toggle" aria-expanded="false" aria-controls="founder-profile-drawer">
+          <span id="drawer-toggle-text">Show Leadership Synopsis &darr;</span>
+        </button>
+
+        <div id="founder-profile-drawer" class="profile-drawer-content" hidden>
+          <div class="drawer-card">
+            <h3>Leadership & Identity Profile</h3>
+            <p><strong>Founder, CEO & Director:</strong> Nitesh Kumar</p>
+            <p><strong>Technical Competence:</strong> 100% Visually Impaired, daily native screen reader power user (NVDA, TalkBack, JAWS). Certified in NAB Delhi DADCA, NIIT Career Edge IT (94%), Deque IAAP CPACC Track, Web Accessibility Fundamentals, and Accessible Document Specialist (ADS).</p>
+            <p><strong>Base:</strong> Dinkar Nagar, Dahi Bhatta, Masaurhi, Patna, Bihar, India (PIN: 804452).</p>
+            <p><a href="about.html" class="btn-link">Read Full Founder Journey on About Page &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation & Header Search -->
+      <div class="header-menu-container">
+        
+        <form id="universal-search" role="search" aria-label="Universal Site Search" class="universal-search-form" onsubmit="event.preventDefault(); window.executeGlobalSearch();">
+          <label for="search-input" class="sr-only">Search all pages, courses, tools, and articles:</label>
+          <div class="search-input-group">
+            <input type="search" id="search-input" name="q" placeholder="Search entire portal..." required autocomplete="off">
+            <button type="submit" class="btn-search-submit">Search</button>
+          </div>
+        </form>
+
+        <button type="button" id="menu-toggle-btn" class="btn-menu-toggle" aria-expanded="false" aria-controls="global-dropdown-menu" aria-label="Open Website Main Navigation Menu">
+          <span class="menu-icon" aria-hidden="true">&#9776;</span>
+          <span class="menu-text">Website Menu</span>
+        </button>
+
+        <nav id="global-dropdown-menu" class="dropdown-menu-list" role="navigation" aria-label="Universal Site Pages" hidden>
+          <ul class="menu-items">
+            <li><a href="index.html" class="menu-link">1. Home Page</a></li>
+            <li><a href="about.html" class="menu-link">2. About N-Labs (Story, Vision, Mission)</a></li>
+            <li><a href="services.html" class="menu-link">3. Core Enterprise Services</a></li>
+            <li><a href="courses.html" class="menu-link">4. Professional Courses (₹99 & ₹299 Batches)</a></li>
+            <li><a href="tools.html" class="menu-link current-page" aria-current="page">5. Audit Engines & Tools</a></li>
+            <li><a href="articles.html" class="menu-link">6. Articles & Publications</a></li>
+            <li><a href="faq.html" class="menu-link">7. Frequently Asked Questions (FAQ)</a></li>
+            <li><a href="contact.html" class="menu-link">8. Contact, Inquiries & Feedback</a></li>
+            <li><a href="register.html" class="menu-link">9. Course Registration Portal</a></li>
+            <li><a href="auth.html" class="menu-link">10. Client Portal Access (Sign Up / Login)</a></li>
+            <li><a href="privacy.html" class="menu-link">11. Privacy Policy</a></li>
+            <li><a href="terms.html" class="menu-link">12. Terms of Use & Disclaimer</a></li>
+            <li><a href="sitemap.html" class="menu-link">13. Universal Sitemap Index</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       5. MAIN PAGE LAYOUT: TWO-COLUMN ENTERPRISE GRID
+       ===================================================================== -->
+  <div class="container page-layout">
+
+    <!-- ===================================================================
+         MAIN LANDMARK (ROLE="MAIN")
+         Contains: Overview and 5 Fully Working Client-Side Audit Engines.
+         =================================================================== -->
+    <main id="main-content" role="main" tabindex="-1">
+
+      <section class="card">
+        <h2>Interactive Conformance & Audit Engines</h2>
+        <p>
+          Welcome to the testing laboratory of <strong>N-Labs</strong>. These five audit engines operate purely on the client side 
+          within your browser, ensuring complete privacy with zero data transmission to external servers. 
+          Each engine is modeled directly upon international compliance benchmarks—including <strong>W3C WCAG 2.1/2.2 Levels A, AA, AAA</strong>, 
+          <strong>WAI-ARIA 1.2</strong>, and <strong>PDF/UA (ISO 14289)</strong> principles acquired through Deque University, IAAP, and NAB Delhi curricula.
+        </p>
+      </section>
+
+      <!-- ENGINE 1: LIVE URL SCANNER -->
+      <section class="card">
+        <h2>Engine 1: Live Website URL Accessibility Auditor</h2>
+        <p>
+          Evaluate any web portal address. Simulates DOM tree inspection, verifies skip links (WCAG 2.4.1), checks for meaningful page titles (WCAG 2.4.2), 
+          and flags missing accessible names on interactive elements (WCAG 4.1.2):
+        </p>
+        <form onsubmit="event.preventDefault(); window.auditLiveURL();" class="tool-form">
+          <label for="tool-url-input">Target Website URL (e.g., https://example.gov.in):</label>
+          <input type="url" id="tool-url-input" placeholder="https://example.gov.in" required>
+          <button type="submit" class="btn-tool-run">Run Live URL Audit</button>
+        </form>
+        <div id="url-audit-output" class="audit-output-box" hidden></div>
+      </section>
+
+      <!-- ENGINE 2: RAW HTML CODE INSPECTOR -->
+      <section class="card">
+        <h2>Engine 2: Raw HTML Web Component Inspector</h2>
+        <p>
+          Paste source code snippets, UI components, or form controls to detect structural defects before production release. 
+          Audits for missing image alternative text (WCAG 1.1.1), non-keyboard anchors (WCAG 2.1.1), unlabelled form inputs (WCAG 3.3.2), 
+          and invalid interactive div elements (WCAG 4.1.2):
+        </p>
+        <form onsubmit="event.preventDefault(); window.auditHTMLSnippet();" class="tool-form">
+          <label for="tool-html-input">Paste HTML Code Snippet:</label>
+          <textarea id="tool-html-input" rows="5" placeholder="e.g. <img src='logo.png'> or <div onclick='submit()'>Save</div>" required></textarea>
+          <button type="submit" class="btn-tool-run">Inspect Component Code</button>
+        </form>
+        <div id="html-audit-output" class="audit-output-box" hidden></div>
+      </section>
+
+      <!-- ENGINE 3: DOCUMENT STRUCTURE AUDITOR -->
+      <section class="card">
+        <h2>Engine 3: Document Remediation Structure Auditor (Word / PDF Text)</h2>
+        <p>
+          Designed around the <strong>Accessible Document Specialist (ADS)</strong> domain. Paste extracted document text, chapter outlines, 
+          or table structures to verify sequential heading hierarchy (H1–H4), detect missing semantic markup, and check for accessible table scopes:
+        </p>
+        <form onsubmit="event.preventDefault(); window.auditDocumentStructure();" class="tool-form">
+          <label for="tool-doc-input">Paste Document Extract / Heading Tree:</label>
+          <textarea id="tool-doc-input" rows="5" placeholder="Paste extracted document sections, headings, or table text here..." required></textarea>
+          <button type="submit" class="btn-tool-run">Audit Document Tree</button>
+        </form>
+        <div id="doc-audit-output" class="audit-output-box" hidden></div>
+      </section>
+
+      <!-- ENGINE 4: COLOR CONTRAST RATIO VERIFIER -->
+      <section class="card">
+        <h2>Engine 4: Deque Standards Color Contrast Ratio Verifier (WCAG 1.4.3)</h2>
+        <p>
+          Calculates relative luminance ratios between foreground text and background colors based on W3C mathematical formulas. 
+          Instantly confirms whether your color pairs pass WCAG AA (4.5:1) for body text, WCAG AAA (7.0:1) for enhanced contrast, 
+          and large text requirements (3.0:1):
+        </p>
+        <div class="contrast-inputs-row">
+          <div class="input-field">
+            <label for="tool-fg-color">Text / Foreground Color (HEX):</label>
+            <input type="text" id="tool-fg-color" value="#111111" required>
+          </div>
+          <div class="input-field">
+            <label for="tool-bg-color">Background Color (HEX):</label>
+            <input type="text" id="tool-bg-color" value="#FFFFFF" required>
+          </div>
+        </div>
+        <button type="button" class="btn-tool-run" onclick="window.calculateContrastRatio();">Verify Contrast Ratio</button>
+        <div id="contrast-audit-output" class="audit-output-box" hidden></div>
+      </section>
+
+      <!-- ENGINE 5: WAI-ARIA LANDMARK & HIERARCHY VALIDATOR -->
+      <section class="card">
+        <h2>Engine 5: WAI-ARIA Landmark & Hierarchy Validator</h2>
+        <p>
+          Verifies programmatic landmark completeness in accordance with the W3C WAI-ARIA Authoring Practices Guide (APG). 
+          Scans the active webpage DOM to confirm the existence and proper placement of all 5 mandatory landmarks: 
+          <code>banner</code>, <code>navigation</code>, <code>main</code>, <code>complementary</code>, and <code>contentinfo</code>:
+        </p>
+        <button type="button" class="btn-tool-run" onclick="window.validateCurrentLandmarks();">Audit Active Page Landmarks</button>
+        <div id="landmark-audit-output" class="audit-output-box" hidden></div>
+      </section>
+
+      <!-- Dynamic Search Results Display Container -->
+      <section id="search-results-panel" class="card" style="display:none;">
+        <h2>Universal Site Search Results</h2>
+        <div id="search-results-container" role="region" aria-live="polite"></div>
+        <button type="button" class="btn-search-close" onclick="document.getElementById('search-results-panel').style.display='none';">Close Search Results</button>
+      </section>
+
+    </main>
+    <!-- END MAIN LANDMARK -->
+
+    <!-- ===================================================================
+         COMPLEMENTARY LANDMARK (ROLE="COMPLEMENTARY")
+         Supporting sidebar content: Testing standards, certifications, and routes.
+         =================================================================== -->
+    <aside id="complementary-section" role="complementary" aria-label="Testing Standards & Verification Context">
+      
+      <!-- Box 1: Compliance Standards -->
+      <section class="card">
+        <h3>Testing Standards</h3>
+        <ul class="clean-bullet-list">
+          <li><strong>WCAG 2.1 & 2.2:</strong> Levels A, AA, AAA</li>
+          <li><strong>WAI-ARIA 1.2:</strong> Roles, States & Properties</li>
+          <li><strong>PDF/UA:</strong> ISO 14289 Document Rules</li>
+          <li><strong>Section 508:</strong> US Federal Standards</li>
+          <li><strong>GIGW 3.0:</strong> Indian Government Directives</li>
+        </ul>
+      </section>
+
+      <!-- Box 2: Manual Auditing Services -->
+      <section class="card">
+        <h3>Need Full Manual Auditing?</h3>
+        <p>
+          Automated checkers miss over 60% of real-world barriers. Commission an enterprise manual audit conducted with NVDA, TalkBack, and JAWS:
+        </p>
+        <div class="auth-quick-actions">
+          <a href="services.html" class="btn-auth-link">View Services</a>
+          <a href="contact.html" class="btn-auth-link">Request Audit</a>
+        </div>
+      </section>
+
+      <!-- Box 3: Learn Auditing -->
+      <section class="card">
+        <h3>Master Accessibility Testing</h3>
+        <p>
+          Learn to test and audit software professionally. Enroll in our 10-week masterclass taught in Hindi via Google Meet for ₹299:
+        </p>
+        <a href="courses.html#course-a11y-auditor" class="btn-read-more">Explore Course Details &rarr;</a>
+      </section>
+
+    </aside>
+    <!-- END COMPLEMENTARY LANDMARK -->
+
+  </div>
+  <!-- END TWO-COLUMN CONTAINER -->
+
+  <!-- FLOATING GO TO TOP BUTTON -->
+  <button type="button" class="btn-floating-top" id="btn-go-top" aria-label="Return directly to top of page">
+    &uarr; Top
+  </button>
+
+  <!-- =====================================================================
+       6. FOOTER LANDMARK (ROLE="CONTENTINFO")
+       ===================================================================== -->
+  <footer id="footer-landmark" role="contentinfo" tabindex="-1">
+    
+    <div class="container footer-content-grid">
+      
+      <div class="footer-col">
+        <h3>N-Labs Headquarters</h3>
+        <p><strong>Entity:</strong> N-Labs (Nitesh Inclusion Labs)</p>
+        <p><strong>Founder, CEO & Director:</strong> Nitesh Kumar</p>
+        <p><strong>Address:</strong> Dinkar Nagar, Dahi Bhatta, Masaurhi, Patna, Bihar, India (PIN: 804452)</p>
+        <p><strong>Official Inbox:</strong> <a href="mailto:niteshkumar91845@gmail.com">niteshkumar91845@gmail.com</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Navigation Links</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="about.html">About N-Labs</a></li>
+          <li><a href="services.html">Enterprise Services</a></li>
+          <li><a href="courses.html">Training Courses (₹99 & ₹299)</a></li>
+          <li><a href="tools.html">Live Audit Engines</a></li>
+          <li><a href="articles.html">Articles & Publications</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact & Feedback</a></li>
+          <li><a href="register.html">Course Registration</a></li>
+          <li><a href="auth.html">Client Sign Up / Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Compliance & Legal Directives</h3>
+        <p>Engineered under the direct supervision of Nitesh Kumar in full conformance with W3C WAI-ARIA 1.2, WCAG 2.0/2.1/2.2 Levels A, AA, AAA, Section 508, and GIGW.</p>
+        <ul class="footer-links-list">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use & Disclaimer</a></li>
+          <li><a href="sitemap.html">Universal Sitemap Index</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Integrated Real-Time Access Telemetry -->
+    <div class="container footer-telemetry-container">
+      <div class="footer-telemetry-box">
+        <h4>Terminal Access Telemetry</h4>
+        <dl class="analytics-data-grid">
+          <div class="data-item">
+            <dt><strong>User Identity:</strong></dt>
+            <dd id="telemetry-username">Guest Visitor (Unauthenticated)</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Visit Frequency:</strong></dt>
+            <dd id="telemetry-visit-count">Calculating access frequency...</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Prior Visit Timestamp:</strong></dt>
+            <dd id="telemetry-prior-date">Checking prior records...</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Current Visit:</strong></dt>
+            <dd id="telemetry-current-date">Wednesday, October 7, 2026 - IST</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Session Active Duration:</strong></dt>
+            <dd id="telemetry-session-duration">0m 0s</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Device & Architecture:</strong></dt>
+            <dd id="telemetry-device">Detecting client platform...</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Network Node:</strong></dt>
+            <dd id="telemetry-location">Patna Node, Bihar, India (Resolved)</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Activity Log:</strong></dt>
+            <dd id="telemetry-activity-log">Tools Page Initialized</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Copyright & Version Stamp -->
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-flex">
+        <p class="copyright-text">&copy; 2026 Nitesh Kumar / N-Labs (Nitesh Inclusion Labs). All rights reserved.</p>
+        <p class="version-stamp"><strong>Platform Build Version:</strong> v3.2.0-PROD | Build: 2026.10.07-IST</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External Unified Logic Script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
