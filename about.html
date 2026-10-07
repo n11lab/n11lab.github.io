@@ -2,12 +2,12 @@
 <html lang="en" dir="ltr">
 <head>
   <!-- =====================================================================
-       ENTERPRISE SEO & ACCESSIBILITY METADATA
+       ENTERPRISE METADATA & ACCESSIBILITY DIRECTIVES
        Entity: N-Labs (Nitesh Inclusion Labs)
-       Founder & Principal Auditor: Nitesh Kumar
-       Compliance Benchmarks: W3C WCAG 2.0/2.1/2.2 (AAA), WAI-ARIA 1.2, GIGW
-       Page Scope: Dedicated Founder Story, Vision, Mission & Institutional Charter
-       Timestamp: Wednesday, October 7, 2026 - 05:54:00 PM IST
+       Directorate: Nitesh Kumar (Founder, CEO & Director)
+       Compliance Standards: W3C WCAG 2.0/2.1/2.2 (Level AAA) & WAI-ARIA 1.2
+       Page Scope: Dedicated Founder Journey, Vision, Mission & Institutional Charter
+       Timestamp: Thursday, October 8, 2026 - IST
        ===================================================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,96 +24,62 @@
 <body>
 
   <!-- =====================================================================
-       SECTION 1: ACCESSIBLE SKIP LINKS & NAVIGATION JUMP CONTROLS
-       WCAG 2.4.1: Bypass Blocks & Full Keyboard Navigation Suite
+       1. ACCESSIBLE SKIP LINKS (WCAG 2.4.1 BYPASS BLOCKS)
        ===================================================================== -->
-  <nav class="skip-links-region" aria-label="Keyboard Shortcuts & Skip Navigation">
-    <a href="#main-content" class="skip-link">Skip to Main Content Landmark</a>
-    <a href="#menu-toggle-btn" class="skip-link">Skip to Expandable Main Menu</a>
-    <a href="#universal-search" class="skip-link">Skip to Universal Search Engine</a>
-    <a href="#vision-section" class="skip-link">Skip to Strategic Vision</a>
-    <a href="#mission-section" class="skip-link">Skip to Operational Mission</a>
-    <a href="#story-section" class="skip-link">Skip to Founder Journey</a>
-    <a href="#complementary-section" class="skip-link">Skip to Complementary Landmark</a>
-    <a href="#telemetry-section" class="skip-link">Skip to Real-Time Analytics</a>
-    <a href="#footer-landmark" class="skip-link">Skip to Footer Contentinfo</a>
+  <nav class="skip-links-region" aria-label="Skip links">
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+    <a href="#menu-toggle-btn" class="skip-link">Skip to Website Navigation</a>
+    <a href="#footer-landmark" class="skip-link">Skip to Footer</a>
   </nav>
 
-  <!-- Quick Action Navigation Bar for Direct Jumps -->
-  <div class="quick-jump-bar" role="region" aria-label="Quick Page Navigation Buttons">
-    <div class="container jump-flex">
-      <span class="jump-label">Quick Jump Controls:</span>
-      <button type="button" class="btn-jump-action" onclick="document.getElementById('main-content').focus(); document.getElementById('main-content').scrollIntoView({behavior:'smooth'});">To Main &darr;</button>
-      <button type="button" class="btn-jump-action" onclick="document.getElementById('vision-section').scrollIntoView({behavior:'smooth'});">To Vision &darr;</button>
-      <button type="button" class="btn-jump-action" onclick="document.getElementById('telemetry-section').scrollIntoView({behavior:'smooth'});">To Analytics &darr;</button>
-      <button type="button" class="btn-jump-action" onclick="document.getElementById('footer-landmark').focus(); document.getElementById('footer-landmark').scrollIntoView({behavior:'smooth'});">To Bottom &darr;&darr;</button>
-    </div>
-  </div>
-  <!-- END SECTION 1 -->
-
   <!-- =====================================================================
-       SECTION 2: ENVIRONMENTAL TELEMETRY RIBBON (TOP OF PAGE)
-       Displays live greeting, clock, date, live weather, location, and thoughts.
-       Silent for Screen Readers: aria-live="off" to prevent automatic audio interruption.
+       2. TOP ENVIRONMENTAL TELEMETRY RIBBON
        ===================================================================== -->
-  <div class="telemetry-ribbon" role="region" aria-label="Environmental Live Status Bar">
+  <div class="telemetry-ribbon" aria-label="Environmental live status">
     <div class="container ribbon-grid">
-      
-      <!-- Greeting and Time -->
       <div class="ribbon-block">
         <span id="live-greeting" class="ribbon-highlight">Good Afternoon | Welcome to N-Labs</span>
         <span class="divider" aria-hidden="true">|</span>
-        <span id="live-clock" tabindex="0" aria-label="Current Live Time">05:54:00 PM</span>
+        <span id="live-clock" tabindex="0">05:02:58 PM</span>
       </div>
-
-      <!-- Date -->
       <div class="ribbon-block">
-        <span id="live-date" tabindex="0" aria-label="Current Full Date">Wednesday, 07 October 2026</span>
+        <span id="live-date" tabindex="0">Thursday, 08 October 2026</span>
       </div>
-
-      <!-- Weather & Geolocation -->
       <div class="ribbon-block">
-        <span id="live-location" tabindex="0" aria-label="Detected Access Location">Location: Patna, Bihar, India</span>
+        <span id="live-location" tabindex="0">Patna, Bihar, India</span>
         <span class="divider" aria-hidden="true">|</span>
-        <span id="live-weather" tabindex="0" aria-label="Live Environmental Conditions">Weather: 29°C | Clear Sky | AQI: 118 (Moderate)</span>
+        <span id="live-weather" tabindex="0">29°C | Clear | AQI: 118</span>
       </div>
-
-      <!-- Thought of the Day (Non-repeating, silently rotating) -->
       <div class="ribbon-block ribbon-quote-box" aria-hidden="true">
         <span class="quote-title">Thought: </span>
         <span id="dynamic-quote" class="quote-text">Universal design makes independence an unconditional reality.</span>
       </div>
-
     </div>
   </div>
-  <!-- END SECTION 2 -->
 
   <!-- =====================================================================
-       SECTION 3: CROSS-DISABILITY ACCESSIBILITY TOOLBAR
-       Independent preferences for Low Vision, Dyslexic, and Motor-impaired users.
+       3. CROSS-DISABILITY ACCESSIBILITY DISPLAY CONTROLS
        ===================================================================== -->
-  <section class="a11y-toolbar-region" role="region" aria-label="Universal Accessibility Display Controls">
+  <div class="a11y-toolbar-region">
     <div class="container a11y-toolbar-flex">
-      <span class="toolbar-title" id="toolbar-heading">Accessibility Reading & Display Aids:</span>
+      <span class="toolbar-title" id="toolbar-heading">Accessibility Aids:</span>
       <div class="toolbar-buttons" role="group" aria-labelledby="toolbar-heading">
-        <button type="button" id="btn-contrast" class="tool-btn" aria-pressed="false">High Contrast (Yellow/Black)</button>
-        <button type="button" id="btn-dyslexic" class="tool-btn" aria-pressed="false">OpenDyslexic Typography</button>
-        <button type="button" id="btn-text-inc" class="tool-btn" aria-label="Increase Text Scale">Font +</button>
-        <button type="button" id="btn-text-dec" class="tool-btn" aria-label="Decrease Text Scale">Font -</button>
-        <button type="button" id="btn-reset-pref" class="tool-btn" aria-label="Reset Display Options">Reset Default View</button>
+        <button type="button" id="btn-contrast" class="tool-btn" aria-pressed="false">High Contrast</button>
+        <button type="button" id="btn-dyslexic" class="tool-btn" aria-pressed="false">Dyslexic Font</button>
+        <button type="button" id="btn-text-inc" class="tool-btn" aria-label="Increase text size">Font +</button>
+        <button type="button" id="btn-text-dec" class="tool-btn" aria-label="Decrease text size">Font -</button>
+        <button type="button" id="btn-reset-pref" class="tool-btn" aria-label="Reset display preferences">Reset</button>
       </div>
     </div>
-  </section>
-  <!-- END SECTION 3 -->
+  </div>
 
   <!-- =====================================================================
-       SECTION 4: HEADER LANDMARK (ROLE="BANNER")
-       Heading 1 with Collapsible Founder Drawer & Accessible Full Dropdown Menu.
+       4. HEADER LANDMARK (ROLE="BANNER")
        ===================================================================== -->
   <header role="banner" class="site-header">
     <div class="container header-flex">
       
-      <!-- H1 Branding with Expandable Profile Details -->
+      <!-- Brand & Leadership Summary -->
       <div class="branding-group">
         <h1 id="site-heading">
           <span class="brand-title">N-Labs</span> 
@@ -121,45 +87,51 @@
         </h1>
         <p class="brand-tagline">About N-Labs | Founder Biography, Strategic Vision & Operational Mission</p>
         
-        <!-- Interactive Drawer Toggle for Founder Story -->
         <button type="button" id="btn-profile-drawer" class="btn-drawer-toggle" aria-expanded="false" aria-controls="founder-profile-drawer">
           <span id="drawer-toggle-text">Show Leadership Synopsis &darr;</span>
         </button>
 
-        <!-- Collapsible Founder Details Box -->
         <div id="founder-profile-drawer" class="profile-drawer-content" hidden>
           <div class="drawer-card">
             <h3>Leadership & Identity Profile</h3>
-            <p><strong>Founder, CEO & Lead Auditor:</strong> Nitesh Kumar</p>
-            <p><strong>Lived Operational Background:</strong> 100% Visually Impaired, daily native screen reader user (NVDA, TalkBack, JAWS, VoiceOver). Direct practical assurance of accessible software experiences.</p>
-            <p><strong>Certified Foundations:</strong> NAB Delhi DADCA, NIIT Career Edge IT (94% Distinction), Deque IAAP CPACC Track, Web Accessibility Fundamentals, and Accessible Document Specialist (ADS).</p>
-            <p><strong>Physical Headquarters:</strong> Dinkar Nagar, Dahi Bhatta, Masaurhi, Patna, Bihar, India (PIN: 804452).</p>
+            <p><strong>Founder, CEO & Director:</strong> Nitesh Kumar</p>
+            <p><strong>Operational Background:</strong> 100% Visually Impaired, daily native screen reader user (NVDA, TalkBack, JAWS). Providing lived non-visual verification combined with international compliance engineering.</p>
+            <p><strong>Credentials:</strong> NAB Delhi DADCA, NIIT Career Edge IT (94%), Deque IAAP CPACC Track, Web Accessibility Fundamentals, and Accessible Document Specialist (ADS).</p>
+            <p><strong>Base:</strong> Dinkar Nagar, Dahi Bhatta, Masaurhi, Patna, Bihar, India (PIN: 804452).</p>
           </div>
         </div>
       </div>
 
-      <!-- Expandable Main Menu Button (Double-tap / Click to access all pages) -->
+      <!-- Navigation & Header Search -->
       <div class="header-menu-container">
+        
+        <form id="universal-search" role="search" aria-label="Universal Site Search" class="universal-search-form" onsubmit="event.preventDefault(); window.executeGlobalSearch();">
+          <label for="search-input" class="sr-only">Search all pages, courses, tools, and articles:</label>
+          <div class="search-input-group">
+            <input type="search" id="search-input" name="q" placeholder="Search entire portal..." required autocomplete="off">
+            <button type="submit" class="btn-search-submit">Search</button>
+          </div>
+        </form>
+
         <button type="button" id="menu-toggle-btn" class="btn-menu-toggle" aria-expanded="false" aria-controls="global-dropdown-menu" aria-label="Open Website Main Navigation Menu">
           <span class="menu-icon" aria-hidden="true">&#9776;</span>
           <span class="menu-text">Website Menu</span>
         </button>
 
-        <!-- Dropdown Navigation Links -->
         <nav id="global-dropdown-menu" class="dropdown-menu-list" role="navigation" aria-label="Universal Site Pages" hidden>
           <ul class="menu-items">
             <li><a href="index.html" class="menu-link">1. Home Page</a></li>
             <li><a href="about.html" class="menu-link current-page" aria-current="page">2. About N-Labs (Story, Vision, Mission)</a></li>
-            <li><a href="services.html" class="menu-link">3. Core Enterprise Services (5 Offerings)</a></li>
+            <li><a href="services.html" class="menu-link">3. Core Enterprise Services</a></li>
             <li><a href="courses.html" class="menu-link">4. Professional Courses (₹99 & ₹299 Batches)</a></li>
-            <li><a href="tools.html" class="menu-link">5. Audit Engines & Tools (5 Live Verifiers)</a></li>
-            <li><a href="articles.html" class="menu-link">6. Knowledge Base & Articles (5 Publications)</a></li>
+            <li><a href="tools.html" class="menu-link">5. Audit Engines & Tools</a></li>
+            <li><a href="articles.html" class="menu-link">6. Articles & Publications</a></li>
             <li><a href="faq.html" class="menu-link">7. Frequently Asked Questions (FAQ)</a></li>
-            <li><a href="contact.html" class="menu-link">8. Contact, Inquiries, Feedback & Suggestions</a></li>
-            <li><a href="register.html" class="menu-link">9. Student Course Registration Portal</a></li>
+            <li><a href="contact.html" class="menu-link">8. Contact, Inquiries & Feedback</a></li>
+            <li><a href="register.html" class="menu-link">9. Course Registration Portal</a></li>
             <li><a href="auth.html" class="menu-link">10. Client Portal Access (Sign Up / Login)</a></li>
             <li><a href="privacy.html" class="menu-link">11. Privacy Policy</a></li>
-            <li><a href="terms.html" class="menu-link">12. Terms of Use & Legal Disclaimer</a></li>
+            <li><a href="terms.html" class="menu-link">12. Terms of Use & Disclaimer</a></li>
             <li><a href="sitemap.html" class="menu-link">13. Universal Sitemap Index</a></li>
           </ul>
         </nav>
@@ -167,149 +139,126 @@
 
     </div>
   </header>
-  <!-- END SECTION 4 -->
 
   <!-- =====================================================================
-       SECTION 5: UNIVERSAL SITE SEARCH ENGINE (ROLE="SEARCH")
-       Located at top above Main Content to filter all site resources.
-       ===================================================================== -->
-  <div class="search-region-wrapper">
-    <div class="container">
-      <form id="universal-search" role="search" aria-label="Site-Wide Universal Search Engine" class="universal-search-form" onsubmit="event.preventDefault(); window.executeGlobalSearch();">
-        <label for="search-input" class="search-label">Universal Search Engine (Filter Pages, Courses, Tools, Articles):</label>
-        <div class="search-input-group">
-          <input type="search" id="search-input" name="q" placeholder="Search about N-Labs, founder story, vision, certifications..." required autocomplete="off">
-          <button type="submit" class="btn-search-submit">Search Entire Portal</button>
-          <button type="button" class="btn-search-clear" onclick="document.getElementById('search-input').value=''; document.getElementById('search-results-panel').style.display='none';">Clear</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <!-- END SECTION 5 -->
-
-  <!-- =====================================================================
-       SECTION 6: TWO-COLUMN MAIN CONTAINER
+       5. MAIN PAGE LAYOUT: TWO-COLUMN ENTERPRISE GRID
        ===================================================================== -->
   <div class="container page-layout">
 
     <!-- ===================================================================
          MAIN LANDMARK (ROLE="MAIN")
-         Contains: Executive Summary, Strategic Vision, Operational Mission,
-         Comprehensive Founder Story, and 5 Pillars of Technical Excellence.
+         Contains: Institutional Overview, Strategic Vision, Operational Mission,
+         Comprehensive Founder Story, and Accreditation Matrix.
          =================================================================== -->
     <main id="main-content" role="main" tabindex="-1">
 
-      <!-- SUB-SECTION A: EXECUTIVE INSTITUTIONAL PROFILE -->
-      <section class="card" aria-labelledby="heading-about-overview">
-        <h2 id="heading-about-overview">Institutional Profile & Overview</h2>
+      <!-- Institutional Profile -->
+      <section class="card">
+        <h2>Institutional Profile & Overview</h2>
         <p>
           <strong>N-Labs (Nitesh Inclusion Labs)</strong> is an independent digital accessibility research, software auditing, and assistive engineering consultancy. 
-          Headquartered in Masaurhi (Patna district, Bihar), the organization was established to address a persistent, structural defect in modern information technology: 
-          the disconnect between technical software code and genuine screen reader operability.
+          Headquartered in Masaurhi (Patna district, Bihar), the organization was established to solve a critical, systemic flaw in modern digital products: 
+          the wide gap between surface-level automated accessibility compliance and genuine screen reader operability.
         </p>
         <p>
-          While modern software organizations frequently rely on surface-level automated checkers, N-Labs operates on a philosophy of dual-engine validation. 
-          We bridge visual design systems with programmatic assistive trees, ensuring that every digital asset—from enterprise web applications and mobile platforms 
-          to public sector portals and PDF documents—functions seamlessly for all human beings, regardless of visual, motor, auditory, or cognitive abilities.
+          While conventional compliance audits frequently rely on superficial automated checkers, N-Labs operates on a philosophy of dual-engine validation. 
+          We bridge visual design systems with programmatic assistive technology trees, ensuring that web platforms, mobile applications, and electronic document repositories 
+          provide complete functional independence and dignity to every human being.
         </p>
       </section>
 
-      <!-- SUB-SECTION B: DEDICATED STRATEGIC VISION -->
-      <section id="vision-section" class="card" aria-labelledby="heading-vision">
-        <h2 id="heading-vision">Strategic Vision</h2>
-        <div class="vision-quote-card">
-          <p class="vision-statement">
+      <!-- Strategic Vision -->
+      <section class="card">
+        <h2>Strategic Vision</h2>
+        <div class="drawer-card" style="margin: 16px 0; border-left: 5px solid var(--color-accent-light);">
+          <p style="font-size: 1.15rem; font-weight: 500; margin: 0; line-height: 1.6;">
             To build a barrier-free digital civilization where every website, application, and electronic document is born accessible by design, 
-            guaranteeing equal dignity, autonomy, and participation for all individuals across the globe.
+            guaranteeing equal autonomy, participation, and dignity for all individuals worldwide.
           </p>
         </div>
         <p>
-          Our vision is rooted in the certainty that accessibility is not an optional aesthetic addition or a temporary corporate convenience; 
-          it is the fundamental architectural pillar of modern civil rights and digital democracy.
+          Our vision is anchored in the principle that accessibility is not a cosmetic enhancement or an afterthought; 
+          it is fundamental digital architecture and a cornerstone of modern civil rights.
         </p>
       </section>
 
-      <!-- SUB-SECTION C: DEDICATED OPERATIONAL MISSION -->
-      <section id="mission-section" class="card" aria-labelledby="heading-mission">
-        <h2 id="heading-mission">Operational Mission</h2>
-        <p>
-          To transform our strategic vision into measurable, everyday reality, N-Labs executes across three distinct operational mandates:
-        </p>
-        
-        <div class="mission-points-grid">
+      <!-- Operational Mission -->
+      <section class="card">
+        <h2>Operational Mission</h2>
+        <p>To translate our vision into measurable results, N-Labs executes across three focused commitments:</p>
+
+        <div class="feed-grid">
           
-          <article class="mission-card">
-            <div class="mission-number" aria-hidden="true">01</div>
-            <h3>Rigorous Manual Auditing & Verification</h3>
+          <article class="feed-item-card">
+            <span class="badge badge-tool">Mandate 01</span>
+            <h3>Rigorous Manual Auditing</h3>
             <p>
-              We conduct comprehensive manual audits on live software systems using native screen readers (NVDA, JAWS, TalkBack) and keyboard-only navigation. 
-              We identify real functional obstacles—such as focus traps, broken name calculations, and missing live regions—that automated algorithms fail to capture.
+              We conduct comprehensive manual audits on live software using native screen readers (NVDA, JAWS, TalkBack) and keyboard-only interaction. 
+              We identify real functional obstacles—such as focus traps and broken ARIA patterns—that automated algorithms miss entirely.
             </p>
           </article>
 
-          <article class="mission-card">
-            <div class="mission-number" aria-hidden="true">02</div>
-            <h3>Actionable Code Remediation & Engineering</h3>
+          <article class="feed-item-card">
+            <span class="badge badge-article">Mandate 02</span>
+            <h3>Actionable Code Remediation</h3>
             <p>
-              We do not merely hand over generic bug lists. We partner directly with software engineering teams, delivering clean, production-ready semantic HTML5 markup, 
-              WAI-ARIA 1.2 implementations, and JavaScript focus management patterns that resolve defects permanently at the root source.
+              We do not merely report compliance errors. We partner directly with software engineering teams, delivering clean, production-ready semantic HTML5 markup, 
+              WAI-ARIA 1.2 implementations, and JavaScript focus management patterns that resolve defects permanently at the source.
             </p>
           </article>
 
-          <article class="mission-card">
-            <div class="mission-number" aria-hidden="true">03</div>
-            <h3>Educational Empowerment & Capacity Building</h3>
+          <article class="feed-item-card">
+            <span class="badge badge-course">Mandate 03</span>
+            <h3>Educational Empowerment</h3>
             <p>
-              We democratize technical accessibility knowledge through targeted, low-cost training programs conducted in Hindi via Google Meet. 
-              We train aspiring disabled professionals, QA engineers, and designers to build, test, and advocate for universal inclusion independently.
+              We democratize technical accessibility knowledge through low-cost training programs conducted in Hindi via Google Meet. 
+              We train aspiring disabled professionals, QA testers, and front-end developers to build, test, and champion universal inclusion independently.
             </p>
           </article>
 
         </div>
       </section>
 
-      <!-- SUB-SECTION D: COMPREHENSIVE FOUNDER STORY & JOURNEY -->
-      <section id="story-section" class="card" aria-labelledby="heading-founder-story">
-        <h2 id="heading-founder-story">Founder Journey: The Lived Perspective of Nitesh Kumar</h2>
+      <!-- Founder Story -->
+      <section class="card">
+        <h2>Founder Journey: The Lived Perspective of Nitesh Kumar</h2>
         
-        <article class="founder-biography">
-          <p>
-            The foundation of N-Labs is inseparable from the personal and technical journey of its founder, <strong>Nitesh Kumar</strong>. 
-            Living with 100% total visual impairment in Masaurhi, Patna, Nitesh experienced firsthand the immense digital barriers present across modern computer systems. 
-            For him, screen-reading software such as NVDA, TalkBack, and JAWS are not testing simulations or developer plug-ins; they are his primary sensory windows into the digital world.
-          </p>
-          
-          <p>
-            When an online government form lacks programmatic label associations, an e-commerce checkout button has no accessible name, or a PDF document lacks a tagged reading tree, 
-            it does not create a minor annoyance—it creates an insurmountable wall that completely blocks independence, education, and employment. 
-            Recognizing that over 60% of real-world usability defects escape automated accessibility checkers, Nitesh chose to turn his lived operational reality into a technical discipline.
-          </p>
+        <p>
+          The mission of N-Labs is deeply connected to the personal and technical journey of its founder, <strong>Nitesh Kumar</strong>. 
+          Navigating life with 100% total visual impairment in Masaurhi, Patna, Nitesh experienced firsthand the immense digital barriers present across modern software systems. 
+          For him, screen-reading tools such as NVDA, TalkBack, and JAWS are not testing emulators or developer plug-ins; they are his primary interface with the digital world.
+        </p>
+        
+        <p>
+          When an online public service portal lacks programmatic label associations, an e-commerce checkout button has no accessible name, or a critical PDF document lacks a tagged reading tree, 
+          it creates an insurmountable barrier that restricts education, employment, and personal independence. 
+          Recognizing that over 60% of real-world usability defects escape automated accessibility checkers, Nitesh transformed his lived operational experience into a rigorous engineering discipline.
+        </p>
 
-          <p>
-            Nitesh pursued rigorous formal computer applications training at the prestigious <strong>National Association for the Blind (NAB) Delhi in R.K. Puram</strong>, completing the 
-            <strong>Diploma in Assistive Devices in Computer Applications (DADCA)</strong>. During this intensive program, he mastered non-visual keyboard interaction, operating system internals, 
-            and assistive device configurations. Simultaneously, he earned the <strong>Career Edge IT Certification from the NIIT Foundation</strong>, graduating with a distinguished score of <strong>94%</strong>.
-          </p>
+        <p>
+          Nitesh pursued formal computer applications training at the <strong>National Association for the Blind (NAB) Delhi in R.K. Puram</strong>, completing the 
+          <strong>Diploma in Assistive Devices in Computer Applications (DADCA)</strong>. During this intensive program, he mastered non-visual keyboard interaction, operating system internals, 
+          and assistive device configurations. Simultaneously, he earned the <strong>Career Edge IT Certification from the NIIT Foundation</strong>, graduating with a distinguished score of <strong>94%</strong>.
+        </p>
 
-          <p>
-            To align his practical skills with international legal and architectural standards, Nitesh completed professional curricula via <strong>Deque University</strong> and the 
-            <strong>International Association of Accessibility Professionals (IAAP)</strong>. He systematically completed the <strong>IAAP CPACC (Certified Professional in Accessibility Core Competencies) Track</strong>, 
-            the <strong>Web Accessibility Fundamentals Track</strong>, and the <strong>Accessible Document Specialist (ADS) Track</strong>.
-          </p>
+        <p>
+          To align his practical skills with international legal and architectural standards, Nitesh completed professional curricula via <strong>Deque University</strong> and the 
+          <strong>International Association of Accessibility Professionals (IAAP)</strong>. He systematically completed the <strong>IAAP CPACC (Certified Professional in Accessibility Core Competencies) Track</strong>, 
+          the <strong>Web Accessibility Fundamentals Track</strong>, and the <strong>Accessible Document Specialist (ADS) Track</strong>.
+        </p>
 
-          <p>
-            Today, Nitesh combines deep lived non-visual operational fluency with formal international compliance engineering (W3C WCAG 2.0/2.1/2.2 Levels A, AA, AAA, Section 508, GIGW). 
-            Through N-Labs, he offers software creators authentic assurance that their platforms do not just pass automated compliance on paper, but provide seamless dignity, operability, 
-            and independence to every user in practice.
-          </p>
-        </article>
+        <p>
+          Today, Nitesh combines lived non-visual operational fluency with formal international compliance engineering (W3C WCAG 2.0/2.1/2.2 Levels A, AA, AAA, Section 508, GIGW). 
+          Through N-Labs, he provides software creators with authentic assurance that their platforms do not simply achieve theoretical compliance on paper, but deliver genuine usability, dignity, 
+          and independence to every user in practice.
+        </p>
       </section>
 
-      <!-- SUB-SECTION E: 5 PILLARS OF TECHNICAL ACCREDITATION -->
-      <section class="card" aria-labelledby="heading-five-pillars">
-        <h2 id="heading-five-pillars">The 5 Pillars of Technical Competence</h2>
+      <!-- Synthesized Accreditation Matrix -->
+      <section class="card">
+        <h2>The 5 Pillars of Technical Competence</h2>
         <p>
-          N-Labs approaches every auditing engagement, document remediation project, and training masterclass through the synthesized lens of five verified credentials:
+          Every audit engine, document remediation workflow, and training masterclass at N-Labs is grounded in five recognized qualifications:
         </p>
 
         <div class="table-responsive">
@@ -317,7 +266,7 @@
             <caption>Synthesized Technical Competencies Matrix</caption>
             <thead>
               <tr>
-                <th scope="col">Accreditation Title</th>
+                <th scope="col">Accreditation</th>
                 <th scope="col">Issuing Authority</th>
                 <th scope="col">Core Technical Domain</th>
                 <th scope="col">Practical Application at N-Labs</th>
@@ -325,21 +274,21 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">DADCA (Diploma in Assistive Devices in Computer Applications)</th>
+                <th scope="row">DADCA (Assistive Devices in Computer Applications)</th>
                 <td>National Association for the Blind (NAB) Delhi</td>
-                <td>NVDA Telemetry, Assistive Hardware/Software, Advanced Keyboard Operability</td>
-                <td>Provides deep non-visual user flow auditing, verifying that every interactive control responds logically to speech feedback.</td>
+                <td>NVDA Telemetry, Assistive Tech QA, Advanced Keyboard Operability</td>
+                <td>Provides deep non-visual user flow auditing, verifying that every interactive element responds logically to speech feedback.</td>
               </tr>
               <tr>
                 <th scope="row">Career Edge IT (94% Distinction)</th>
                 <td>NIIT Foundation</td>
-                <td>Information Architecture, Office Data Systems & Technical Formatting</td>
+                <td>Information Architecture, Data Systems & Enterprise Formatting</td>
                 <td>Ensures clean data taxonomy, rigorous table formatting, and clear enterprise documentation across all deliverables.</td>
               </tr>
               <tr>
                 <th scope="row">IAAP CPACC Preparation Track</th>
                 <td>Deque University</td>
-                <td>Disability Models, Universal Design & International Legal Frameworks</td>
+                <td>Disability Models, Universal Design & Global Legal Mandates</td>
                 <td>Governs compliance strategy under US ADA Title III, Section 508, European Accessibility Act (EN 301 549), and India's RPwD Act.</td>
               </tr>
               <tr>
@@ -351,7 +300,7 @@
               <tr>
                 <th scope="row">Accessible Document Specialist (ADS Track)</th>
                 <td>Deque University & IAAP Frameworks</td>
-                <td>PDF/UA (ISO 14289), Logical Reading Trees & Structured Office Documents</td>
+                <td>PDF/UA (ISO 14289), Reading Trees & Structured Office Documents</td>
                 <td>Enables comprehensive PDF, Word, and Excel remediation, including table header scope, alternative text, and reading sequence fixes.</td>
               </tr>
             </tbody>
@@ -359,9 +308,9 @@
         </div>
       </section>
 
-      <!-- DYNAMIC SEARCH RESULTS DISPLAY PANEL -->
-      <section id="search-results-panel" class="card" aria-labelledby="heading-search-results" style="display:none;">
-        <h2 id="heading-search-results">Universal Site Search Results</h2>
+      <!-- Dynamic Search Results Display Container -->
+      <section id="search-results-panel" class="card" style="display:none;">
+        <h2>Universal Site Search Results</h2>
         <div id="search-results-container" role="region" aria-live="polite"></div>
         <button type="button" class="btn-search-close" onclick="document.getElementById('search-results-panel').style.display='none';">Close Search Results</button>
       </section>
@@ -371,27 +320,26 @@
 
     <!-- ===================================================================
          COMPLEMENTARY LANDMARK (ROLE="COMPLEMENTARY")
-         Located immediately after Main Content.
-         Contains: Quick Facts, Institutional Charter, and Direct Action Links.
+         Supporting sidebar content: Key facts, institutional values, routes.
          =================================================================== -->
     <aside id="complementary-section" role="complementary" aria-label="About N-Labs Quick Facts and Credentials">
       
       <!-- Box 1: Quick Facts -->
-      <section class="card" aria-labelledby="heading-side-facts">
-        <h3 id="heading-side-facts">At A Glance</h3>
+      <section class="card">
+        <h3>At A Glance</h3>
         <ul class="clean-bullet-list">
           <li><strong>Entity Name:</strong> N-Labs (Nitesh Inclusion Labs)</li>
-          <li><strong>Founded By:</strong> Nitesh Kumar</li>
+          <li><strong>Founder, CEO & Director:</strong> Nitesh Kumar</li>
           <li><strong>Headquarters:</strong> Masaurhi, Patna, Bihar, India</li>
           <li><strong>Auditing Focus:</strong> WCAG 2.1/2.2 Levels A, AA, AAA</li>
-          <li><strong>Primary Tools:</strong> NVDA, TalkBack, JAWS, axe-core</li>
-          <li><strong>Legal Frameworks:</strong> Section 508, ADA, GIGW, EAA</li>
+          <li><strong>Primary Assistive Tech:</strong> NVDA, TalkBack, JAWS, VoiceOver</li>
+          <li><strong>Compliance Standards:</strong> Section 508, ADA, GIGW, EAA</li>
         </ul>
       </section>
 
       <!-- Box 2: Institutional Values -->
-      <section class="card" aria-labelledby="heading-side-values">
-        <h3 id="heading-side-values">Core Institutional Values</h3>
+      <section class="card">
+        <h3>Core Values</h3>
         <ul class="clean-bullet-list">
           <li><strong>Authentic Rigor:</strong> Zero reliance on automated overlays or superficial scanners alone.</li>
           <li><strong>Universal Equity:</strong> Digital products must be usable by all people on equal terms.</li>
@@ -401,14 +349,14 @@
       </section>
 
       <!-- Box 3: Related Navigation Paths -->
-      <section class="card" aria-labelledby="heading-side-routes">
-        <h3 id="heading-side-routes">Explore Related Portals</h3>
-        <p>Discover our practical auditing work and educational programs:</p>
+      <section class="card">
+        <h3>Explore Our Work</h3>
+        <p>Discover our practical auditing services and educational programs:</p>
         <ul class="clean-bullet-list">
-          <li><a href="services.html">5 Core Enterprise Services</a></li>
+          <li><a href="services.html">Enterprise Services</a></li>
           <li><a href="courses.html">Training Courses (₹99 & ₹299)</a></li>
-          <li><a href="tools.html">5 Interactive Audit Engines</a></li>
-          <li><a href="contact.html">Connect with Nitesh Kumar</a></li>
+          <li><a href="tools.html">Live Audit Engines</a></li>
+          <li><a href="contact.html">Connect with the Directorate</a></li>
         </ul>
       </section>
 
@@ -418,93 +366,26 @@
   </div>
   <!-- END TWO-COLUMN CONTAINER -->
 
-  <!-- =====================================================================
-       SECTION 7: REAL-TIME AUDITING & VISITOR TELEMETRY MODULE
-       Positioned after Complementary Landmark and before Contentinfo (Footer).
-       Provides real-time access telemetry, visit count, duration, and device specs.
-       ===================================================================== -->
-  <section id="telemetry-section" class="telemetry-analytics-container" role="region" aria-label="Real-Time Visitor Access Telemetry and Auditing">
-    <div class="container">
-      <div class="card analytics-card">
-        
-        <div class="analytics-header-row">
-          <h3>Real-Time Visitor Access Telemetry & Platform Analytics</h3>
-          <span class="badge badge-telemetry">Active Monitoring Node</span>
-        </div>
-        <p class="analytics-intro">This module monitors client sessions in real time without third-party tracking cookies:</p>
-
-        <dl class="analytics-data-grid">
-          
-          <div class="data-item">
-            <dt><strong>User Identity:</strong></dt>
-            <dd id="telemetry-username">Guest Visitor (Unauthenticated)</dd>
-          </div>
-
-          <div class="data-item">
-            <dt><strong>Lifetime Visit Frequency:</strong></dt>
-            <dd id="telemetry-visit-count">Calculating access frequency...</dd>
-          </div>
-
-          <div class="data-item">
-            <dt><strong>Prior Visit Timestamp:</strong></dt>
-            <dd id="telemetry-prior-date">Checking prior records...</dd>
-          </div>
-
-          <div class="data-item">
-            <dt><strong>Current Visit Timestamp:</strong></dt>
-            <dd id="telemetry-current-date">Wednesday, October 7, 2026 - 05:54:00 PM IST</dd>
-          </div>
-
-          <div class="data-item">
-            <dt><strong>Active Session Duration:</strong></dt>
-            <dd id="telemetry-session-duration">0m 0s</dd>
-          </div>
-
-          <div class="data-item">
-            <dt><strong>Client Device & OS Architecture:</strong></dt>
-            <dd id="telemetry-device">Detecting client platform...</dd>
-          </div>
-
-          <div class="data-item">
-            <dt><strong>Network Geolocation Node:</strong></dt>
-            <dd id="telemetry-location">Patna Node, Bihar, India (Resolving...)</dd>
-          </div>
-
-          <div class="data-item">
-            <dt><strong>Navigation Activity Log:</strong></dt>
-            <dd id="telemetry-activity-log">About N-Labs Initialized</dd>
-          </div>
-
-        </dl>
-
-      </div>
-    </div>
-  </section>
-  <!-- END SECTION 7: TELEMETRY -->
-
   <!-- FLOATING GO TO TOP BUTTON -->
   <button type="button" class="btn-floating-top" id="btn-go-top" aria-label="Return directly to top of page">
     &uarr; Top
   </button>
 
   <!-- =====================================================================
-       SECTION 8: FOOTER LANDMARK (ROLE="CONTENTINFO")
-       Contains: Quick Links, Contact details, Address, Copyright, and Version Stamp.
+       6. FOOTER LANDMARK (ROLE="CONTENTINFO")
        ===================================================================== -->
   <footer id="footer-landmark" role="contentinfo" tabindex="-1">
+    
     <div class="container footer-content-grid">
       
-      <!-- Column 1: Headquarters & Official Channels -->
       <div class="footer-col">
         <h3>N-Labs Headquarters</h3>
         <p><strong>Entity:</strong> N-Labs (Nitesh Inclusion Labs)</p>
-        <p><strong>Principal Auditor:</strong> Nitesh Kumar</p>
+        <p><strong>Founder, CEO & Director:</strong> Nitesh Kumar</p>
         <p><strong>Address:</strong> Dinkar Nagar, Dahi Bhatta, Masaurhi, Patna, Bihar, India (PIN: 804452)</p>
-        <p><strong>Direct Telephone:</strong> <a href="tel:+918434721287">+91 84347 21287</a></p>
         <p><strong>Official Inbox:</strong> <a href="mailto:niteshkumar91845@gmail.com">niteshkumar91845@gmail.com</a></p>
       </div>
 
-      <!-- Column 2: Quick Links Directory -->
       <div class="footer-col">
         <h3>Quick Navigation Links</h3>
         <ul class="footer-links-list">
@@ -521,7 +402,6 @@
         </ul>
       </div>
 
-      <!-- Column 3: Legal Disclosures & Compliance Statement -->
       <div class="footer-col">
         <h3>Compliance & Legal Directives</h3>
         <p>Engineered under the direct supervision of Nitesh Kumar in full conformance with W3C WAI-ARIA 1.2, WCAG 2.0/2.1/2.2 Levels A, AA, AAA, Section 508, and GIGW.</p>
@@ -534,17 +414,57 @@
 
     </div>
 
-    <!-- Copyright & Version Release Notice -->
+    <!-- Integrated Real-Time Access Telemetry -->
+    <div class="container footer-telemetry-container">
+      <div class="footer-telemetry-box">
+        <h4>Terminal Access Telemetry</h4>
+        <dl class="analytics-data-grid">
+          <div class="data-item">
+            <dt><strong>User Identity:</strong></dt>
+            <dd id="telemetry-username">Guest Visitor (Unauthenticated)</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Visit Frequency:</strong></dt>
+            <dd id="telemetry-visit-count">Calculating access frequency...</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Prior Visit Timestamp:</strong></dt>
+            <dd id="telemetry-prior-date">Checking prior records...</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Current Visit:</strong></dt>
+            <dd id="telemetry-current-date">Thursday, October 8, 2026 - IST</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Session Active Duration:</strong></dt>
+            <dd id="telemetry-session-duration">0m 0s</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Device & Architecture:</strong></dt>
+            <dd id="telemetry-device">Detecting client platform...</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Network Node:</strong></dt>
+            <dd id="telemetry-location">Patna Node, Bihar, India (Resolved)</dd>
+          </div>
+          <div class="data-item">
+            <dt><strong>Activity Log:</strong></dt>
+            <dd id="telemetry-activity-log">About Page Initialized</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Copyright & Version Stamp -->
     <div class="footer-bottom-bar">
       <div class="container footer-bottom-flex">
         <p class="copyright-text">&copy; 2026 Nitesh Kumar / N-Labs (Nitesh Inclusion Labs). All rights reserved.</p>
-        <p class="version-stamp"><strong>Platform Build Version:</strong> v3.0.0-PROD | Build: 2026.10.07-IST</p>
+        <p class="version-stamp"><strong>Platform Build Version:</strong> v3.2.0-PROD | Build: 2026.10.08-IST</p>
       </div>
     </div>
   </footer>
-  <!-- END FOOTER LANDMARK -->
 
-  <!-- External Unified Logic Script (Separate JS File Architecture) -->
+  <!-- External Unified Logic Script -->
   <script src="script.js" defer></script>
 </body>
 </html>
